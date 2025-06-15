@@ -1,5 +1,7 @@
 # qa-automation-portfolio
 
+[![Playwright Tests](https://github.com/script-hermit/qa-automation-portfolio/actions/workflows/playwright.yml/badge.svg)](https://github.com/script-hermit/qa-automation-portfolio/actions/workflows/playwright.yml)
+
 A showcase of my QA automation skills across web, mobile, and API testing. This repo highlights real-world test strategies using Playwright, Appium (Java + TestNG), Postman, and GitHub Actions for CI/CD integration.
 
 ---
@@ -105,5 +107,3 @@ QA Engineer | Automation Enthusiast | CI/CD Advocate
 [LinkedIn](https://www.linkedin.com/in/dane-wilbur) | [GitHub](https://github.com/yourusername)
 
 ---
-
-![Playwright CI](https://github.com/yourusername/qa-automation-portfolio/actions/workflows/playwright.yml/badge.svg)
