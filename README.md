@@ -105,7 +105,3 @@ QA Engineer | Automation Enthusiast | CI/CD Advocate
 [LinkedIn](https://www.linkedin.com/in/dane-wilbur) | [GitHub](https://github.com/yourusername)
 
 ---
-
-## 📝 License
-
-This project is licensed under the MIT License. Feel free to fork, use, or contribute!
