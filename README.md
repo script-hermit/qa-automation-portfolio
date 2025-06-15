@@ -105,3 +105,5 @@ QA Engineer | Automation Enthusiast | CI/CD Advocate
 [LinkedIn](https://www.linkedin.com/in/dane-wilbur) | [GitHub](https://github.com/yourusername)
 
 ---
+
+![Playwright CI](https://github.com/yourusername/qa-automation-portfolio/actions/workflows/playwright.yml/badge.svg)
