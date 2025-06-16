@@ -32,6 +32,9 @@ jobs:
           npm install -g allure-commandline
           appium driver install uiautomator2
 
+      - name: Set ADB install timeout
+        run: echo "APPIUM_SETTINGS_APK_INSTALL_TIMEOUT=180000" >> $GITHUB_ENV
+
       - name: Run tests on Android emulator
         uses: reactivecircus/android-emulator-runner@v2
         with:
