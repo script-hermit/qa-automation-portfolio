@@ -7,7 +7,7 @@
         <methods>
           <include name="testLaunch"/>
           <include name="tearDown"/>
-          <include name="startAppiumServerAndDriver"/>
+          <include name="setUpDriver"/>
         </methods>
       </class> <!-- com.example.tests.LoginTest -->
     </classes>

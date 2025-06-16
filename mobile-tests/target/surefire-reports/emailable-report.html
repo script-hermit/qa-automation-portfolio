@@ -8,55 +8,11 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">TestSuite</th></tr>
-<tr><td><a href="#t0">LoginTests</a></td><td class="num">0</td><td class="num attn">1</td><td class="num">0</td><td class="num">0</td><td class="num">3,460</td><td></td><td></td></tr>
+<tr><th colspan="8">MobileTestSuite</th></tr>
+<tr><td><a href="#t0">AllMobileTests</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">5,413</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">TestSuite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">LoginTests &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">com.example.tests.LoginTest</td><td><a href="#m0">startAppiumServerAndDriver</a></td><td rowspan="1">1750039566167</td><td rowspan="1">3438</td></tr><tr><th colspan="4">LoginTests &#8212; skipped (configuration methods)</th></tr><tr class="skippedeven"><td rowspan="1">com.example.tests.LoginTest</td><td><a href="#m1">tearDown</a></td><td rowspan="1">1750039569614</td><td rowspan="1">0</td></tr><tr><th colspan="4">LoginTests &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="1">com.example.tests.LoginTest</td><td><a href="#m2">testLaunch</a></td><td rowspan="1">1750039569613</td><td rowspan="1">0</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">MobileTestSuite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">AllMobileTests &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.example.tests.LoginTest</td><td><a href="#m0">testLaunch</a></td><td rowspan="1">1750041924513</td><td rowspan="1">2</td></tr></tbody>
 </table>
-<h2>LoginTests</h2><h3 id="m0">com.example.tests.LoginTest#startAppiumServerAndDriver</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: An unknown server-side error occurred while processing the command. Original error: Error executing adbExec. Original error: &apos;Command &apos;C:\\Users\\danev\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe -P 5037 -s emulator-5554 install -g C:\\Users\\danev\\qaRepo\\qa-automation-portfolio\\mobile-tests\\src\\test\\resources\\apks\\ApiDemos-debug.apk&apos; exited with code 1&apos;; Command output: adb: failed to install C:\Users\danev\qaRepo\qa-automation-portfolio\mobile-tests\src\test\resources\apks\ApiDemos-debug.apk: Failure [INSTALL_FAILED_DEPRECATED_SDK_VERSION: App package must target at least SDK version 23, but found 19]
- 
-Host info: host: &apos;DESKTOP-MLBBIN1&apos;, ip: &apos;100.72.39.15&apos;
-Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.1&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [null, newSession {capabilities=[Capabilities {appium:app: C:\Users\danev\qaRepo\qa-au..., appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, platformName: ANDROID}]}]
-Capabilities {appium:app: C:\Users\danev\qaRepo\qa-au..., appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, platformName: ANDROID}
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
-	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:176)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
-	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:270)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:173)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:91)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:103)
-	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:109)
-	at com.example.base.BaseTest.startAppiumServerAndDriver(BaseTest.java:43)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.example.tests.LoginTest#tearDown</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">com.example.tests.LoginTest#testLaunch</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: An unknown server-side error occurred while processing the command. Original error: Error executing adbExec. Original error: &apos;Command &apos;C:\\Users\\danev\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe -P 5037 -s emulator-5554 install -g C:\\Users\\danev\\qaRepo\\qa-automation-portfolio\\mobile-tests\\src\\test\\resources\\apks\\ApiDemos-debug.apk&apos; exited with code 1&apos;; Command output: adb: failed to install C:\Users\danev\qaRepo\qa-automation-portfolio\mobile-tests\src\test\resources\apks\ApiDemos-debug.apk: Failure [INSTALL_FAILED_DEPRECATED_SDK_VERSION: App package must target at least SDK version 23, but found 19]
- 
-Host info: host: &apos;DESKTOP-MLBBIN1&apos;, ip: &apos;100.72.39.15&apos;
-Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.1&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [null, newSession {capabilities=[Capabilities {appium:app: C:\Users\danev\qaRepo\qa-au..., appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, platformName: ANDROID}]}]
-Capabilities {appium:app: C:\Users\danev\qaRepo\qa-au..., appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, platformName: ANDROID}
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
-	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:176)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
-	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:270)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:173)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:91)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:103)
-	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:109)
-	at com.example.base.BaseTest.startAppiumServerAndDriver(BaseTest.java:43)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>AllMobileTests</h2><h3 id="m0">com.example.tests.LoginTest#testLaunch</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
