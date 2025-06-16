@@ -21,7 +21,38 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      - name: Cache Maven packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+
       - name: Build and run API tests
         run: |
           cd api-tests
           mvn clean test
+
+      - name: Upload Allure results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results
+          path: api-tests/allure-results
+
+      - name: Install Allure CLI
+        run: |
+          sudo npm install -g allure-commandline --unsafe-perm=true
+
+      - name: Generate Allure report
+        run: |
+          cd api-tests
+          allure generate --clean
+
+      - name: Upload Allure HTML report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report
+          path: api-tests/allure-report
