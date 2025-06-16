@@ -1,1 +1,2 @@
-LoginTest.class
+com\example\tests\LoginTest.class
+com\example\base\BaseTest.class

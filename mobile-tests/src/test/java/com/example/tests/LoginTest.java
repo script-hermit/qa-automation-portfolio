@@ -1,8 +1,11 @@
+package com.example.tests;
+
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.*;
+import com.example.base.BaseTest;
 
 import java.net.URL;
 
