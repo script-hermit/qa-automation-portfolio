@@ -1,0 +1,5 @@
+com\example\tests\WikipediaSearchTest.class
+com\example\utils\TestListener.class
+com\example\base\TestSuiteSetup.class
+com\example\base\BaseTest.class
+com\example\utils\DeviceHelper.class

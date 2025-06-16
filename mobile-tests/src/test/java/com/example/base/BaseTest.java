@@ -1,6 +1,7 @@
 package com.example.base;
 
 import com.example.utils.DeviceHelper;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import org.testng.annotations.AfterClass;
@@ -12,7 +13,7 @@ import java.time.Duration;
 
 public class BaseTest {
 
-    protected AndroidDriver driver;
+    protected AppiumDriver driver;
     protected DeviceHelper deviceHelper;
     private static final String APP_PACKAGE = "org.wikipedia";
     private String apkPath;
@@ -31,7 +32,9 @@ public class BaseTest {
                 .autoGrantPermissions()
                 .setAppPackage(APP_PACKAGE)
                 .setAppActivity("org.wikipedia.main.MainActivity")
-                .setAppWaitActivity("org.wikipedia.onboarding.InitialOnboardingActivity");
+                .setAppWaitActivity("*")
+                .amend("fullReset", true)
+                .amend("noReset", false);  // 🔁 This tells Appium to reinstall the app and not preserve state
 
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
@@ -50,6 +53,7 @@ public class BaseTest {
             } catch (Exception e) {
                 System.out.println("[WARN] App uninstall failed: " + e.getMessage());
             } finally {
+                deviceHelper.resetApp();  // ✅ ensures a clean state
                 driver.quit();
             }
         }

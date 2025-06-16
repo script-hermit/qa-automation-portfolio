@@ -1,0 +1,52 @@
+name: Mobile Tests with Allure
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  mobile-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '22'
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Appium and Allure
+        run: |
+          npm install -g appium
+          npm install -g allure-commandline
+
+      - name: Start Appium server
+        run: |
+          nohup appium --log appium.log &
+          sleep 10
+
+      # If you need an emulator, add steps here to set up Android SDK and start an emulator
+
+      - name: Run Maven tests
+        run: mvn clean test
+
+      - name: Generate Allure report
+        run: |
+          allure generate allure-results --clean -o allure-report
+
+      - name: Upload Allure report artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report
+          path: allure-report
