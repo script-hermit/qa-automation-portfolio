@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Mobile Test Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="5" name="App Tests(failed)" verbose="0">
+    <classes>
+      <class name="LoginTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="testLaunch"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- LoginTest -->
+    </classes>
+  </test> <!-- App Tests(failed) -->
+</suite> <!-- Failed suite [Mobile Test Suite] -->
