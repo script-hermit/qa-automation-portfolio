@@ -2,6 +2,7 @@
 
 [![Playwright Tests](https://github.com/script-hermit/qa-automation-portfolio/actions/workflows/playwright.yml/badge.svg)](https://github.com/script-hermit/qa-automation-portfolio/actions/workflows/playwright.yml)
 [![Mobile Tests](https://github.com/script-hermit/qa-automation-portfolio/actions/workflows/mobile-test.yml/badge.svg)](https://github.com/script-hermit/qa-automation-portfolio/actions/workflows/mobile-test.yml)
+[![Wikipedia API Tests](https://github.com/script-hermit/qa-automation-portfolio/actions/workflows/api-tests.yml/badge.svg?branch=main)](https://github.com/script-hermit/qa-automation-portfolio/actions/workflows/api-tests.yml)
 
 A showcase of my QA automation skills across web, mobile, and API testing. This repo highlights real-world test strategies using Playwright, Appium (Java + TestNG), Postman, and GitHub Actions for CI/CD integration.
 
