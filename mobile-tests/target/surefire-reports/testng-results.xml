@@ -2,37 +2,44 @@
 <testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-15T19:20:05 CDT" name="Mobile Test Suite" finished-at="2025-06-15T19:20:05 CDT" duration-ms="230">
+  <suite started-at="2025-06-15T21:06:06 CDT" name="TestSuite" finished-at="2025-06-15T21:06:09 CDT" duration-ms="3460">
     <groups>
     </groups>
-    <test started-at="2025-06-15T19:20:05 CDT" name="App Tests" finished-at="2025-06-15T19:20:05 CDT" duration-ms="230">
-      <class name="LoginTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:LoginTest@4c371370]" started-at="2025-06-15T19:20:05 CDT" name="setup" finished-at="2025-06-15T19:20:05 CDT" duration-ms="207" status="FAIL">
+    <test started-at="2025-06-15T21:06:06 CDT" name="LoginTests" finished-at="2025-06-15T21:06:09 CDT" duration-ms="3460">
+      <class name="com.example.tests.LoginTest">
+        <test-method is-config="true" signature="startAppiumServerAndDriver()[pri:0, instance:com.example.tests.LoginTest@4f6ee6e4]" started-at="2025-06-15T21:06:06 CDT" name="startAppiumServerAndDriver" finished-at="2025-06-15T21:06:09 CDT" duration-ms="3438" status="FAIL">
           <exception class="org.openqa.selenium.SessionNotCreatedException">
             <message>
-              <![CDATA[Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+              <![CDATA[Could not start a new session. Response code 500. Message: An unknown server-side error occurred while processing the command. Original error: Error executing adbExec. Original error: 'Command 'C:\\Users\\danev\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe -P 5037 -s emulator-5554 install -g C:\\Users\\danev\\qaRepo\\qa-automation-portfolio\\mobile-tests\\src\\test\\resources\\apks\\ApiDemos-debug.apk' exited with code 1'; Command output: adb: failed to install C:\Users\danev\qaRepo\qa-automation-portfolio\mobile-tests\src\test\resources\apks\ApiDemos-debug.apk: Failure [INSTALL_FAILED_DEPRECATED_SDK_VERSION: App package must target at least SDK version 23, but found 19]
+ 
 Host info: host: 'DESKTOP-MLBBIN1', ip: '100.72.39.15'
 Build info: version: '4.33.0', revision: '2c6aaad03a'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
 Driver info: io.appium.java_client.android.AndroidDriver
-Command: [null, newSession {capabilities=[Capabilities {app: C:\Users\danev\qaRepo\qa-au..., automationName: UiAutomator2, deviceName: emulator-5554, platformName: ANDROID, udid: emulator-5554}]}]
-Capabilities {app: C:\Users\danev\qaRepo\qa-au..., automationName: UiAutomator2, deviceName: emulator-5554, platformName: ANDROID, udid: emulator-5554}]]>
+Command: [null, newSession {capabilities=[Capabilities {appium:app: C:\Users\danev\qaRepo\qa-au..., appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, platformName: ANDROID}]}]
+Capabilities {appium:app: C:\Users\danev\qaRepo\qa-au..., appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, platformName: ANDROID}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: An unknown server-side error occurred while processing the command. Original error: Error executing adbExec. Original error: 'Command 'C:\\Users\\danev\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe -P 5037 -s emulator-5554 install -g C:\\Users\\danev\\qaRepo\\qa-automation-portfolio\\mobile-tests\\src\\test\\resources\\apks\\ApiDemos-debug.apk' exited with code 1'; Command output: adb: failed to install C:\Users\danev\qaRepo\qa-automation-portfolio\mobile-tests\src\test\resources\apks\ApiDemos-debug.apk: Failure [INSTALL_FAILED_DEPRECATED_SDK_VERSION: App package must target at least SDK version 23, but found 19]
+ 
 Host info: host: 'DESKTOP-MLBBIN1', ip: '100.72.39.15'
 Build info: version: '4.33.0', revision: '2c6aaad03a'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
 Driver info: io.appium.java_client.android.AndroidDriver
-Command: [null, newSession {capabilities=[Capabilities {app: C:\Users\danev\qaRepo\qa-au..., automationName: UiAutomator2, deviceName: emulator-5554, platformName: ANDROID, udid: emulator-5554}]}]
-Capabilities {app: C:\Users\danev\qaRepo\qa-au..., automationName: UiAutomator2, deviceName: emulator-5554, platformName: ANDROID, udid: emulator-5554}
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:562)
+Command: [null, newSession {capabilities=[Capabilities {appium:app: C:\Users\danev\qaRepo\qa-au..., appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, platformName: ANDROID}]}]
+Capabilities {appium:app: C:\Users\danev\qaRepo\qa-au..., appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, platformName: ANDROID}
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:176)
+at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
 at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:270)
 at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:173)
 at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:91)
 at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:103)
 at io.appium.java_client.android.AndroidDriver.<init>(AndroidDriver.java:109)
-at LoginTest.setup(LoginTest.java:20)
+at com.example.base.BaseTest.startAppiumServerAndDriver(BaseTest.java:43)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -61,60 +68,45 @@ at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter
 at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
 at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-Caused by: java.lang.IllegalArgumentException: Illegal key values seen in w3c capabilities: [app, automationName, deviceName, udid]
-at org.openqa.selenium.remote.NewSessionPayload.lambda$validate$5(NewSessionPayload.java:163)
-at java.base/java.util.stream.ReferencePipeline$15$1.accept(ReferencePipeline.java:555)
-at java.base/java.util.stream.ReferencePipeline$15$1.accept(ReferencePipeline.java:556)
-at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:212)
-at java.base/java.util.stream.ReferencePipeline$15$1.accept(ReferencePipeline.java:556)
-at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1709)
-at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:556)
-at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:546)
-at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
-at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
-at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
-at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:611)
-at org.openqa.selenium.remote.NewSessionPayload.validate(NewSessionPayload.java:167)
-at org.openqa.selenium.remote.NewSessionPayload.<init>(NewSessionPayload.java:70)
-at org.openqa.selenium.remote.NewSessionPayload.create(NewSessionPayload.java:99)
-at org.openqa.selenium.remote.NewSessionPayload.create(NewSessionPayload.java:84)
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:60)
-at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:176)
-at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
-... 34 more
 ]]>
             </full-stacktrace>
           </exception> <!-- org.openqa.selenium.SessionNotCreatedException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="testLaunch()[pri:0, instance:LoginTest@4c371370]" started-at="2025-06-15T19:20:05 CDT" name="testLaunch" finished-at="2025-06-15T19:20:05 CDT" duration-ms="0" status="SKIP">
+        </test-method> <!-- startAppiumServerAndDriver -->
+        <test-method signature="testLaunch()[pri:0, instance:com.example.tests.LoginTest@4f6ee6e4]" started-at="2025-06-15T21:06:09 CDT" name="testLaunch" finished-at="2025-06-15T21:06:09 CDT" duration-ms="0" status="SKIP">
           <exception class="org.openqa.selenium.SessionNotCreatedException">
             <message>
-              <![CDATA[Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+              <![CDATA[Could not start a new session. Response code 500. Message: An unknown server-side error occurred while processing the command. Original error: Error executing adbExec. Original error: 'Command 'C:\\Users\\danev\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe -P 5037 -s emulator-5554 install -g C:\\Users\\danev\\qaRepo\\qa-automation-portfolio\\mobile-tests\\src\\test\\resources\\apks\\ApiDemos-debug.apk' exited with code 1'; Command output: adb: failed to install C:\Users\danev\qaRepo\qa-automation-portfolio\mobile-tests\src\test\resources\apks\ApiDemos-debug.apk: Failure [INSTALL_FAILED_DEPRECATED_SDK_VERSION: App package must target at least SDK version 23, but found 19]
+ 
 Host info: host: 'DESKTOP-MLBBIN1', ip: '100.72.39.15'
 Build info: version: '4.33.0', revision: '2c6aaad03a'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
 Driver info: io.appium.java_client.android.AndroidDriver
-Command: [null, newSession {capabilities=[Capabilities {app: C:\Users\danev\qaRepo\qa-au..., automationName: UiAutomator2, deviceName: emulator-5554, platformName: ANDROID, udid: emulator-5554}]}]
-Capabilities {app: C:\Users\danev\qaRepo\qa-au..., automationName: UiAutomator2, deviceName: emulator-5554, platformName: ANDROID, udid: emulator-5554}]]>
+Command: [null, newSession {capabilities=[Capabilities {appium:app: C:\Users\danev\qaRepo\qa-au..., appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, platformName: ANDROID}]}]
+Capabilities {appium:app: C:\Users\danev\qaRepo\qa-au..., appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, platformName: ANDROID}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: An unknown server-side error occurred while processing the command. Original error: Error executing adbExec. Original error: 'Command 'C:\\Users\\danev\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe -P 5037 -s emulator-5554 install -g C:\\Users\\danev\\qaRepo\\qa-automation-portfolio\\mobile-tests\\src\\test\\resources\\apks\\ApiDemos-debug.apk' exited with code 1'; Command output: adb: failed to install C:\Users\danev\qaRepo\qa-automation-portfolio\mobile-tests\src\test\resources\apks\ApiDemos-debug.apk: Failure [INSTALL_FAILED_DEPRECATED_SDK_VERSION: App package must target at least SDK version 23, but found 19]
+ 
 Host info: host: 'DESKTOP-MLBBIN1', ip: '100.72.39.15'
 Build info: version: '4.33.0', revision: '2c6aaad03a'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
 Driver info: io.appium.java_client.android.AndroidDriver
-Command: [null, newSession {capabilities=[Capabilities {app: C:\Users\danev\qaRepo\qa-au..., automationName: UiAutomator2, deviceName: emulator-5554, platformName: ANDROID, udid: emulator-5554}]}]
-Capabilities {app: C:\Users\danev\qaRepo\qa-au..., automationName: UiAutomator2, deviceName: emulator-5554, platformName: ANDROID, udid: emulator-5554}
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:562)
+Command: [null, newSession {capabilities=[Capabilities {appium:app: C:\Users\danev\qaRepo\qa-au..., appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, platformName: ANDROID}]}]
+Capabilities {appium:app: C:\Users\danev\qaRepo\qa-au..., appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, platformName: ANDROID}
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:176)
+at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
 at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:270)
 at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:173)
 at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:91)
 at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:103)
 at io.appium.java_client.android.AndroidDriver.<init>(AndroidDriver.java:109)
-at LoginTest.setup(LoginTest.java:20)
+at com.example.base.BaseTest.startAppiumServerAndDriver(BaseTest.java:43)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -143,39 +135,17 @@ at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter
 at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
 at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-Caused by: java.lang.IllegalArgumentException: Illegal key values seen in w3c capabilities: [app, automationName, deviceName, udid]
-at org.openqa.selenium.remote.NewSessionPayload.lambda$validate$5(NewSessionPayload.java:163)
-at java.base/java.util.stream.ReferencePipeline$15$1.accept(ReferencePipeline.java:555)
-at java.base/java.util.stream.ReferencePipeline$15$1.accept(ReferencePipeline.java:556)
-at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:212)
-at java.base/java.util.stream.ReferencePipeline$15$1.accept(ReferencePipeline.java:556)
-at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1709)
-at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:556)
-at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:546)
-at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
-at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
-at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
-at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:611)
-at org.openqa.selenium.remote.NewSessionPayload.validate(NewSessionPayload.java:167)
-at org.openqa.selenium.remote.NewSessionPayload.<init>(NewSessionPayload.java:70)
-at org.openqa.selenium.remote.NewSessionPayload.create(NewSessionPayload.java:99)
-at org.openqa.selenium.remote.NewSessionPayload.create(NewSessionPayload.java:84)
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:60)
-at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:176)
-at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
-... 34 more
 ]]>
             </full-stacktrace>
           </exception> <!-- org.openqa.selenium.SessionNotCreatedException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLaunch -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:LoginTest@4c371370]" started-at="2025-06-15T19:20:05 CDT" name="tearDown" finished-at="2025-06-15T19:20:05 CDT" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.LoginTest@4f6ee6e4]" started-at="2025-06-15T21:06:09 CDT" name="tearDown" finished-at="2025-06-15T21:06:09 CDT" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- LoginTest -->
-    </test> <!-- App Tests -->
-  </suite> <!-- Mobile Test Suite -->
+      </class> <!-- com.example.tests.LoginTest -->
+    </test> <!-- LoginTests -->
+  </suite> <!-- TestSuite -->
 </testng-results>

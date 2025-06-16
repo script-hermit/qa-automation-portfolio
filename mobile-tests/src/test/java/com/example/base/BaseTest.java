@@ -18,6 +18,8 @@ public class BaseTest {
     protected AndroidDriver driver;
     private AppiumDriverLocalService service;
 
+    
+
     @BeforeClass
     public void startAppiumServerAndDriver() throws Exception {
         service = new AppiumServiceBuilder()
