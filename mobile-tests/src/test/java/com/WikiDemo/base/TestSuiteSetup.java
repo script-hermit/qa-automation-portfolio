@@ -17,14 +17,14 @@ public class TestSuiteSetup {
 
     @BeforeSuite
     public void startAppiumServer() {
-        // Only start Appium locally if the property is set
-        if (Boolean.getBoolean("startLocalAppium")) {
-            System.out.println("[Suite] Starting Appium Server...");
+        String os = System.getProperty("os.name").toLowerCase();
+        if (os.contains("win")) {
+            // Start Appium server for local Windows runs
             service = new AppiumServiceBuilder()
-                    .withAppiumJS(new File("C:\\Users\\danev\\node_modules\\appium\\build\\lib\\main.js"))
-                    .withIPAddress("127.0.0.1")
-                    .usingPort(4723)
-                    .build();
+                .withAppiumJS(new File("C:\\Users\\danev\\node_modules\\appium\\build\\lib\\main.js"))
+                .withIPAddress("127.0.0.1")
+                .usingPort(4723)
+                .build();
             service.start();
         } else {
             System.out.println("[Suite] Skipping Appium server startup (handled by workflow or externally).");

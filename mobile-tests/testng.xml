@@ -8,8 +8,8 @@
 
     <test name="AllMobileTests">
         <classes>
-            <class name="com.example.base.TestSuiteSetup"/>
-            <class name="com.example.tests.WikipediaSearchTest"/>
+            <class name="com.WikiDemo.base.TestSuiteSetup"/>
+            <class name="com.WikiDemo.tests.WikipediaSearchTest"/>
         </classes>
     </test>
 

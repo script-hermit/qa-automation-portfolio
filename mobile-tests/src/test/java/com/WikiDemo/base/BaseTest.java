@@ -8,6 +8,7 @@ import org.testng.annotations.BeforeClass;
 
 import com.WikiDemo.utils.DeviceHelper;
 
+import java.net.URI;
 import java.net.URL;
 import java.nio.file.Paths;
 import java.time.Duration;
@@ -37,7 +38,8 @@ public class BaseTest {
                 .amend("fullReset", true)
                 .amend("noReset", false);  // 🔁 This tells Appium to reinstall the app and not preserve state
 
-        driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
+        URL url = URI.create("http://127.0.0.1:4723").toURL();
+        driver = new AndroidDriver(url, options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 
         deviceHelper = new DeviceHelper(driver);
