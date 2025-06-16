@@ -1,7 +1,6 @@
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.qameta.allure.Description;
-import io.qameta.allure.Step;
 import io.qameta.allure.Attachment;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
