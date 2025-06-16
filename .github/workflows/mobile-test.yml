@@ -1,10 +1,10 @@
 name: Mobile Tests with Allure
 
 on:
-  # push:
-  #   branches: [ main ]
-  # pull_request:
-  #   branches: [ main ]
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
@@ -35,7 +35,7 @@ jobs:
       - name: Run tests on Android emulator
         uses: reactivecircus/android-emulator-runner@v2
         with:
-          api-level: 30
+          api-level: 29
           target: google_apis
           arch: x86_64
           profile: pixel_4
@@ -43,6 +43,8 @@ jobs:
           disable-animations: true
           script: |
             nohup appium --log appium.log &
+            sleep 10
+            adb wait-for-device
             sleep 10
             cd mobile-tests
             mvn clean test
