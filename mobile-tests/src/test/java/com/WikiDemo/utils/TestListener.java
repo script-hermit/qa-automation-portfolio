@@ -1,4 +1,4 @@
-package com.example.utils;
+package com.WikiDemo.utils;
 
 import io.appium.java_client.AppiumDriver;
 import org.apache.commons.io.FileUtils;

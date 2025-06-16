@@ -117,6 +117,6 @@ To view results:
 
 **Dane Wilbur**  
 QA Engineer | Automation Enthusiast | CI/CD Advocate  
-[LinkedIn](https://www.linkedin.com/in/dane-wilbur) | [GitHub](https://github.com/yourusername)
+[LinkedIn](https://www.linkedin.com/in/danevader) | [GitHub](https://github.com/script-hermit)
 
 ---

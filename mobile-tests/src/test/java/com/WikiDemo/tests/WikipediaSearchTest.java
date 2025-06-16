@@ -1,4 +1,4 @@
-package com.example.tests;
+package com.WikiDemo.tests;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.qameta.allure.Description;
@@ -16,11 +16,13 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import com.WikiDemo.base.BaseTest;
+
 import io.appium.java_client.android.nativekey.KeyEvent;
 import io.appium.java_client.android.nativekey.AndroidKey;
 // Add this to your imports if not already
 import io.appium.java_client.android.AndroidDriver;
-import com.example.base.BaseTest;
 
 public class WikipediaSearchTest extends BaseTest {
 

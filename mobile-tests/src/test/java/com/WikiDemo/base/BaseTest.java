@@ -1,11 +1,12 @@
-package com.example.base;
+package com.WikiDemo.base;
 
-import com.example.utils.DeviceHelper;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+
+import com.WikiDemo.utils.DeviceHelper;
 
 import java.net.URL;
 import java.nio.file.Paths;

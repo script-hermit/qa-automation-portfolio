@@ -1,4 +1,4 @@
-package com.example.utils;
+package com.WikiDemo.utils;
 
 import java.time.Duration;
 
