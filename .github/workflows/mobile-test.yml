@@ -30,13 +30,23 @@ jobs:
         run: |
           npm install -g appium
           npm install -g allure-commandline
+          appium driver install uiautomator2
+
+      - name: Set up Android SDK
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 30
+          target: google_apis
+          arch: x86_64
+          profile: pixel_4
+          emulator-options: -no-window -noaudio -no-boot-anim
+          disable-animations: true
+          script: echo "Emulator is ready"
 
       - name: Start Appium server
         run: |
           nohup appium --log appium.log &
           sleep 10
-
-      # If you need an emulator, add steps here to set up Android SDK and start an emulator
 
       - name: Run Maven tests
         run: mvn clean test
