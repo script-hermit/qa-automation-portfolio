@@ -17,6 +17,19 @@ public class TestSuiteSetup {
 
     @BeforeSuite
     public void startAppiumServer() {
+        // Only start Appium locally if the property is set
+        if (Boolean.getBoolean("startLocalAppium")) {
+            System.out.println("[Suite] Starting Appium Server...");
+            service = new AppiumServiceBuilder()
+                    .withAppiumJS(new File("C:\\Users\\danev\\node_modules\\appium\\build\\lib\\main.js"))
+                    .withIPAddress("127.0.0.1")
+                    .usingPort(4723)
+                    .build();
+            service.start();
+        } else {
+            System.out.println("[Suite] Skipping Appium server startup (handled by workflow or externally).");
+        }
+
         System.out.println("[Suite] Clearing Allure results...");
         try {
             Path allureResults = Paths.get("allure-results");
@@ -29,14 +42,6 @@ public class TestSuiteSetup {
         } catch (IOException e) {
             System.out.println("[WARN] Could not clear allure-results: " + e.getMessage());
         }
-
-        System.out.println("[Suite] Starting Appium Server...");
-        service = new AppiumServiceBuilder()
-                .withAppiumJS(new File("C:\\Users\\danev\\node_modules\\appium\\build\\lib\\main.js"))
-                .withIPAddress("127.0.0.1")
-                .usingPort(4723)
-                .build();
-        service.start();
     }
 
     @AfterSuite(alwaysRun = true)
