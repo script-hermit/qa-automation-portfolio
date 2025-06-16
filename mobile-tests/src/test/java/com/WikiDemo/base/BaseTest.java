@@ -36,7 +36,8 @@ public class BaseTest {
                 .setAppActivity("org.wikipedia.main.MainActivity")
                 .setAppWaitActivity("*")
                 .amend("fullReset", true)
-                .amend("noReset", false);  // 🔁 This tells Appium to reinstall the app and not preserve state
+                .amend("noReset", false)
+                .amend("androidInstallTimeout", 180000); // <-- Add this line (3 minutes)
 
         URL url = URI.create("http://127.0.0.1:4723").toURL();
         driver = new AndroidDriver(url, options);

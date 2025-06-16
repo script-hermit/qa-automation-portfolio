@@ -38,7 +38,7 @@ jobs:
           api-level: 28
           target: google_apis
           arch: x86_64
-          profile: pixel_4
+          profile: Nexus 5
           emulator-options: -no-window -noaudio -no-boot-anim
           disable-animations: true
           script: |
