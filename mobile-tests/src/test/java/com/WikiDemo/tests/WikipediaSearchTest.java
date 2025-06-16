@@ -22,7 +22,7 @@ import com.WikiDemo.base.BaseTest;
 import io.appium.java_client.android.nativekey.KeyEvent;
 import io.appium.java_client.android.nativekey.AndroidKey;
 // Add this to your imports if not already
-import io.appium.java_client.android.AndroidDriver;
+
 
 public class WikipediaSearchTest extends BaseTest {
 

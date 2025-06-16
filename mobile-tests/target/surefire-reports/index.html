@@ -103,7 +103,12 @@
                     <div class="method-list-content skipped suite-MobileTestSuite">
                       <span>
                         <img src="skipped.png" width="3%"/>
-                        <a href="#" panel-name="suite-MobileTestSuite" title="com.WikiDemo.tests.WikipediaSearchTest" class="method navigator-link" hash-for-method="testSearchForTerm(Android)">testSearchForTerm(Android)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-MobileTestSuite" title="com.WikiDemo.tests.WikipediaSearchTest" class="method navigator-link" hash-for-method="testSearchForTerm(TestNG)">testSearchForTerm(TestNG)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-MobileTestSuite" title="com.WikiDemo.tests.WikipediaSearchTest" class="method navigator-link" hash-for-method="testSearchForTerm(Appium)">testSearchForTerm(Appium)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -113,12 +118,7 @@
                       <br/>
                       <span>
                         <img src="skipped.png" width="3%"/>
-                        <a href="#" panel-name="suite-MobileTestSuite" title="com.WikiDemo.tests.WikipediaSearchTest" class="method navigator-link" hash-for-method="testSearchForTerm(TestNG)">testSearchForTerm(TestNG)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="skipped.png" width="3%"/>
-                        <a href="#" panel-name="suite-MobileTestSuite" title="com.WikiDemo.tests.WikipediaSearchTest" class="method navigator-link" hash-for-method="testSearchForTerm(Appium)">testSearchForTerm(Appium)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-MobileTestSuite" title="com.WikiDemo.tests.WikipediaSearchTest" class="method navigator-link" hash-for-method="testSearchForTerm(Android)">testSearchForTerm(Android)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content skipped suite-MobileTestSuite -->
@@ -141,136 +141,23 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="testSearchForTerm(Android)">
-                  </a> <!-- testSearchForTerm(Android) -->
-                  <span class="method-name">testSearchForTerm</span>
-                  <span class="parameters">(Android)</span>
-                  <div class="stack-trace">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
-Host info: host: &apos;DESKTOP-MLBBIN1&apos;, ip: &apos;100.72.39.15&apos;
-Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.1&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [null, newSession {capabilities=[Capabilities {appium:app: C:\Users\danev\qaRepo\qa-au..., appium:appActivity: org.wikipedia.main.MainActi..., appium:appPackage: org.wikipedia, appium:appWaitActivity: *, appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, appium:fullReset: true, appium:noReset: false, platformName: ANDROID}]}]
-Capabilities {appium:app: C:\Users\danev\qaRepo\qa-au..., appium:appActivity: org.wikipedia.main.MainActi..., appium:appPackage: org.wikipedia, appium:appWaitActivity: *, appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, appium:fullReset: true, appium:noReset: false, platformName: ANDROID}
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:562)
-	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:270)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:173)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:91)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:103)
-	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:109)
-	at com.WikiDemo.base.BaseTest.setUpDriver(BaseTest.java:42)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-Caused by: java.io.UncheckedIOException: java.net.ConnectException
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:500)
-	at io.appium.java_client.internal.filters.AppiumIdempotencyFilter.lambda$apply$0(AppiumIdempotencyFilter.java:35)
-	at io.appium.java_client.internal.filters.AppiumUserAgentFilter.lambda$apply$0(AppiumUserAgentFilter.java:87)
-	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.lambda$executeAsync$2(JdkHttpClient.java:387)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1570)
-Caused by: java.net.ConnectException
-	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:956)
-	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:459)
-	... 9 more
-Caused by: java.net.ConnectException
-	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1065)
-	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:227)
-	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:280)
-	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$2(PlainHttpConnection.java:238)
-	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
-	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
-	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
-	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
-	... 3 more
-Caused by: java.nio.channels.ClosedChannelException
-	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:204)
-	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:873)
-	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:961)
-	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:210)
-	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
-	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:212)
-	... 9 more
-... Removed 27 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testSearchForTerm(Selenium)">
-                  </a> <!-- testSearchForTerm(Selenium) -->
-                  <span class="method-name">testSearchForTerm</span>
-                  <span class="parameters">(Selenium)</span>
-                  <div class="stack-trace">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
-Host info: host: &apos;DESKTOP-MLBBIN1&apos;, ip: &apos;100.72.39.15&apos;
-Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.1&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [null, newSession {capabilities=[Capabilities {appium:app: C:\Users\danev\qaRepo\qa-au..., appium:appActivity: org.wikipedia.main.MainActi..., appium:appPackage: org.wikipedia, appium:appWaitActivity: *, appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, appium:fullReset: true, appium:noReset: false, platformName: ANDROID}]}]
-Capabilities {appium:app: C:\Users\danev\qaRepo\qa-au..., appium:appActivity: org.wikipedia.main.MainActi..., appium:appPackage: org.wikipedia, appium:appWaitActivity: *, appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, appium:fullReset: true, appium:noReset: false, platformName: ANDROID}
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:562)
-	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:270)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:173)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:91)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:103)
-	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:109)
-	at com.WikiDemo.base.BaseTest.setUpDriver(BaseTest.java:42)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-Caused by: java.io.UncheckedIOException: java.net.ConnectException
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:500)
-	at io.appium.java_client.internal.filters.AppiumIdempotencyFilter.lambda$apply$0(AppiumIdempotencyFilter.java:35)
-	at io.appium.java_client.internal.filters.AppiumUserAgentFilter.lambda$apply$0(AppiumUserAgentFilter.java:87)
-	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.lambda$executeAsync$2(JdkHttpClient.java:387)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1570)
-Caused by: java.net.ConnectException
-	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:956)
-	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:459)
-	... 9 more
-Caused by: java.net.ConnectException
-	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1065)
-	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:227)
-	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:280)
-	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$2(PlainHttpConnection.java:238)
-	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
-	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
-	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
-	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
-	... 3 more
-Caused by: java.nio.channels.ClosedChannelException
-	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:204)
-	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:873)
-	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:961)
-	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:210)
-	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
-	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:212)
-	... 9 more
-... Removed 27 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
                   <a name="testSearchForTerm(TestNG)">
                   </a> <!-- testSearchForTerm(TestNG) -->
                   <span class="method-name">testSearchForTerm</span>
                   <span class="parameters">(TestNG)</span>
-                  <div class="stack-trace">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+                  <div class="stack-trace">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: An unknown server-side error occurred while processing the command. Original error: Could not find a connected Android device in 20000ms 
 Host info: host: &apos;DESKTOP-MLBBIN1&apos;, ip: &apos;100.72.39.15&apos;
 Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.1&apos;
 Driver info: io.appium.java_client.android.AndroidDriver
 Command: [null, newSession {capabilities=[Capabilities {appium:app: C:\Users\danev\qaRepo\qa-au..., appium:appActivity: org.wikipedia.main.MainActi..., appium:appPackage: org.wikipedia, appium:appWaitActivity: *, appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, appium:fullReset: true, appium:noReset: false, platformName: ANDROID}]}]
 Capabilities {appium:app: C:\Users\danev\qaRepo\qa-au..., appium:appActivity: org.wikipedia.main.MainActi..., appium:appPackage: org.wikipedia, appium:appWaitActivity: *, appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, appium:fullReset: true, appium:noReset: false, platformName: ANDROID}
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:562)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:176)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
 	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:270)
 	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:173)
 	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:91)
@@ -278,40 +165,6 @@ Capabilities {appium:app: C:\Users\danev\qaRepo\qa-au..., appium:appActivity: or
 	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:109)
 	at com.WikiDemo.base.BaseTest.setUpDriver(BaseTest.java:42)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-Caused by: java.io.UncheckedIOException: java.net.ConnectException
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:500)
-	at io.appium.java_client.internal.filters.AppiumIdempotencyFilter.lambda$apply$0(AppiumIdempotencyFilter.java:35)
-	at io.appium.java_client.internal.filters.AppiumUserAgentFilter.lambda$apply$0(AppiumUserAgentFilter.java:87)
-	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.lambda$executeAsync$2(JdkHttpClient.java:387)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1570)
-Caused by: java.net.ConnectException
-	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:956)
-	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:459)
-	... 9 more
-Caused by: java.net.ConnectException
-	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1065)
-	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:227)
-	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:280)
-	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$2(PlainHttpConnection.java:238)
-	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
-	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
-	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
-	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
-	... 3 more
-Caused by: java.nio.channels.ClosedChannelException
-	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:204)
-	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:873)
-	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:961)
-	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:210)
-	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
-	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:212)
-	... 9 more
 ... Removed 27 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
@@ -322,14 +175,19 @@ Caused by: java.nio.channels.ClosedChannelException
                   </a> <!-- testSearchForTerm(Appium) -->
                   <span class="method-name">testSearchForTerm</span>
                   <span class="parameters">(Appium)</span>
-                  <div class="stack-trace">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+                  <div class="stack-trace">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: An unknown server-side error occurred while processing the command. Original error: Could not find a connected Android device in 20000ms 
 Host info: host: &apos;DESKTOP-MLBBIN1&apos;, ip: &apos;100.72.39.15&apos;
 Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.1&apos;
 Driver info: io.appium.java_client.android.AndroidDriver
 Command: [null, newSession {capabilities=[Capabilities {appium:app: C:\Users\danev\qaRepo\qa-au..., appium:appActivity: org.wikipedia.main.MainActi..., appium:appPackage: org.wikipedia, appium:appWaitActivity: *, appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, appium:fullReset: true, appium:noReset: false, platformName: ANDROID}]}]
 Capabilities {appium:app: C:\Users\danev\qaRepo\qa-au..., appium:appActivity: org.wikipedia.main.MainActi..., appium:appPackage: org.wikipedia, appium:appWaitActivity: *, appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, appium:fullReset: true, appium:noReset: false, platformName: ANDROID}
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:562)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:176)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
 	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:270)
 	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:173)
 	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:91)
@@ -337,40 +195,66 @@ Capabilities {appium:app: C:\Users\danev\qaRepo\qa-au..., appium:appActivity: or
 	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:109)
 	at com.WikiDemo.base.BaseTest.setUpDriver(BaseTest.java:42)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-Caused by: java.io.UncheckedIOException: java.net.ConnectException
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:500)
-	at io.appium.java_client.internal.filters.AppiumIdempotencyFilter.lambda$apply$0(AppiumIdempotencyFilter.java:35)
-	at io.appium.java_client.internal.filters.AppiumUserAgentFilter.lambda$apply$0(AppiumUserAgentFilter.java:87)
-	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.lambda$executeAsync$2(JdkHttpClient.java:387)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1570)
-Caused by: java.net.ConnectException
-	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:956)
-	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:459)
-	... 9 more
-Caused by: java.net.ConnectException
-	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1065)
-	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:227)
-	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:280)
-	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$2(PlainHttpConnection.java:238)
-	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
-	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
-	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
-	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
-	... 3 more
-Caused by: java.nio.channels.ClosedChannelException
-	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:204)
-	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:873)
-	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:961)
-	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:210)
-	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
-	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:212)
-	... 9 more
+... Removed 27 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testSearchForTerm(Selenium)">
+                  </a> <!-- testSearchForTerm(Selenium) -->
+                  <span class="method-name">testSearchForTerm</span>
+                  <span class="parameters">(Selenium)</span>
+                  <div class="stack-trace">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: An unknown server-side error occurred while processing the command. Original error: Could not find a connected Android device in 20000ms 
+Host info: host: &apos;DESKTOP-MLBBIN1&apos;, ip: &apos;100.72.39.15&apos;
+Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.1&apos;
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [null, newSession {capabilities=[Capabilities {appium:app: C:\Users\danev\qaRepo\qa-au..., appium:appActivity: org.wikipedia.main.MainActi..., appium:appPackage: org.wikipedia, appium:appWaitActivity: *, appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, appium:fullReset: true, appium:noReset: false, platformName: ANDROID}]}]
+Capabilities {appium:app: C:\Users\danev\qaRepo\qa-au..., appium:appActivity: org.wikipedia.main.MainActi..., appium:appPackage: org.wikipedia, appium:appWaitActivity: *, appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, appium:fullReset: true, appium:noReset: false, platformName: ANDROID}
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:176)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:270)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:173)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:91)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:103)
+	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:109)
+	at com.WikiDemo.base.BaseTest.setUpDriver(BaseTest.java:42)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 27 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testSearchForTerm(Android)">
+                  </a> <!-- testSearchForTerm(Android) -->
+                  <span class="method-name">testSearchForTerm</span>
+                  <span class="parameters">(Android)</span>
+                  <div class="stack-trace">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: An unknown server-side error occurred while processing the command. Original error: Could not find a connected Android device in 20000ms 
+Host info: host: &apos;DESKTOP-MLBBIN1&apos;, ip: &apos;100.72.39.15&apos;
+Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.1&apos;
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [null, newSession {capabilities=[Capabilities {appium:app: C:\Users\danev\qaRepo\qa-au..., appium:appActivity: org.wikipedia.main.MainActi..., appium:appPackage: org.wikipedia, appium:appWaitActivity: *, appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, appium:fullReset: true, appium:noReset: false, platformName: ANDROID}]}]
+Capabilities {appium:app: C:\Users\danev\qaRepo\qa-au..., appium:appActivity: org.wikipedia.main.MainActi..., appium:appPackage: org.wikipedia, appium:appWaitActivity: *, appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, appium:fullReset: true, appium:noReset: false, platformName: ANDROID}
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:176)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:270)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:173)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:91)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:103)
+	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:109)
+	at com.WikiDemo.base.BaseTest.setUpDriver(BaseTest.java:42)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
 ... Removed 27 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
@@ -492,50 +376,50 @@ return data;
                 <img src="failed.png">
                 </img>
                 <span class="method-name">setUpDriver</span>
-                <span class="method-start">16 ms</span>
+                <span class="method-start">2411 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">prepareApp</span>
-                <span class="method-start">326 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="configuration-method before">
-                <span class="method-name">prepareApp</span>
-                <span class="method-start">342 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="configuration-method before">
-                <span class="method-name">prepareApp</span>
-                <span class="method-start">342 ms</span>
+                <span class="method-start">24864 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">testSearchForTerm(Android)</span>
-                <span class="method-start">342 ms</span>
+                <span class="method-name">testSearchForTerm(Appium)</span>
+                <span class="method-start">24872 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">prepareApp</span>
-                <span class="method-start">342 ms</span>
+                <span class="method-start">24875 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testSearchForTerm(TestNG)</span>
-                <span class="method-start">342 ms</span>
+                <span class="method-start">24875 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">prepareApp</span>
+                <span class="method-start">24875 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">prepareApp</span>
+                <span class="method-start">24875 ms</span>
+              </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">testSearchForTerm(Appium)</span>
-                <span class="method-start">342 ms</span>
+                <span class="method-name">testSearchForTerm(Android)</span>
+                <span class="method-start">24875 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testSearchForTerm(Selenium)</span>
-                <span class="method-start">357 ms</span>
+                <span class="method-start">24883 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">357 ms</span>
+                <span class="method-start">24885 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.WikiDemo.base.TestSuiteSetup</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">stopAppiumServer</span>
-                <span class="method-start">373 ms</span>
+                <span class="method-start">24902 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
