@@ -19,9 +19,15 @@ public class TestSuiteSetup {
     public void startAppiumServer() {
         String os = System.getProperty("os.name").toLowerCase();
         if (os.contains("win")) {
-            // Start Appium server for local Windows runs
+            // Use environment variable for Appium main.js path for better portability
+            String appiumJsPath = System.getenv("APPIUM_MAIN_JS");
+            if (appiumJsPath == null || appiumJsPath.isEmpty()) {
+                // Fallback to default path if env variable is not set
+                appiumJsPath = "C:\\Users\\danev\\node_modules\\appium\\build\\lib\\main.js";
+                System.out.println("[Suite][WARN] APPIUM_MAIN_JS environment variable not set. Using default: " + appiumJsPath);
+            }
             service = new AppiumServiceBuilder()
-                .withAppiumJS(new File("C:\\Users\\danev\\node_modules\\appium\\build\\lib\\main.js"))
+                .withAppiumJS(new File(appiumJsPath))
                 .withIPAddress("127.0.0.1")
                 .usingPort(4723)
                 .build();

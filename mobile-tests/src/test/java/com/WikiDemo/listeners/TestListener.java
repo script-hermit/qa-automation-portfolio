@@ -1,4 +1,4 @@
-package com.WikiDemo.utils;
+package com.WikiDemo.listeners;
 
 import io.appium.java_client.AppiumDriver;
 import org.apache.commons.io.FileUtils;
@@ -56,6 +56,12 @@ public class TestListener implements ITestListener {
         String name = result.getMethod().getMethodName();
         logToFile("[FAIL] Test: " + name + " - " + result.getThrowable());
         captureScreenshot(result);
+        // Attach log file to Allure on failure
+        try (FileInputStream logStream = new FileInputStream(LOG_FILE)) {
+            Allure.addAttachment("Test Log", logStream);
+        } catch (IOException e) {
+            System.err.println("Could not attach log to Allure: " + e.getMessage());
+        }
     }
 
     @Override
@@ -82,5 +88,11 @@ public class TestListener implements ITestListener {
     @Override
     public void onFinish(ITestContext context) {
         logToFile("=== TEST SUITE FINISHED ===");
+        // Attach log file to Allure at suite end
+        try (FileInputStream logStream = new FileInputStream(LOG_FILE)) {
+            Allure.addAttachment("Full Test Log", logStream);
+        } catch (IOException e) {
+            System.err.println("Could not attach log to Allure: " + e.getMessage());
+        }
     }
 }

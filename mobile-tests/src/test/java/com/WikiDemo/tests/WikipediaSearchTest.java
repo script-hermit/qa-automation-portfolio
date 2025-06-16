@@ -21,8 +21,6 @@ import com.WikiDemo.base.BaseTest;
 
 import io.appium.java_client.android.nativekey.KeyEvent;
 import io.appium.java_client.android.nativekey.AndroidKey;
-// Add this to your imports if not already
-
 
 public class WikipediaSearchTest extends BaseTest {
 
@@ -33,11 +31,11 @@ public class WikipediaSearchTest extends BaseTest {
         skipOnboardingIfPresent();  // ✅ skips tutorial screen
     }
 
-    @Test(dataProvider = "searchTerms")
-    @Description("Searches for terms in the Wikipedia app and verifies results")
-    public void testSearchForTerm(String term) {
+    @Test(dataProvider = "searchTerms", description = "Verify Wikipedia search returns results for various terms")
+    @Description("Searches for each provided term in the Wikipedia app and verifies that results are displayed.")
+    public void shouldDisplayResultsForSearchTerm(String term) {
         performSearch(term);
-        verifyResults();
+        verifyResults(term);
     }
 
     @DataProvider(name = "searchTerms")
@@ -78,24 +76,25 @@ public class WikipediaSearchTest extends BaseTest {
         driver.findElement(By.id("org.wikipedia:id/search_src_text")).sendKeys(term);
     }
 
-   @Step("Verify at least one search result appears")
-    public void verifyResults() {
+    @Step("Verify at least one search result appears for term: {term}")
+    public void verifyResults(String term) {
         List<WebElement> results = driver.findElements(By.id("org.wikipedia:id/page_list_item_title"));
-        Assert.assertTrue(results.size() > 0, "Expected search results to appear.");
+        Assert.assertTrue(
+            results.size() > 0,
+            "Expected at least one search result to appear for term: '" + term + "', but none were found."
+        );
 
         // Press back button after results are verified
         if (driver instanceof AndroidDriver) {
             ((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.BACK));
             ((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.BACK));
             System.out.println("[INFO] Back button pressed to return to previous screen.");
-            
+
             // Optional: Wait for the search field to reappear, indicating return to main screen
             new WebDriverWait(driver, Duration.ofSeconds(5))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.id("org.wikipedia:id/search_container")));
         } else {
             System.out.println("[WARN] Driver is not an instance of AndroidDriver.");
         }
-}
-
-
+    }
 }

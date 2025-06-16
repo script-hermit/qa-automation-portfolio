@@ -12,6 +12,8 @@ import java.net.URI;
 import java.net.URL;
 import java.nio.file.Paths;
 import java.time.Duration;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class BaseTest {
 
@@ -19,6 +21,7 @@ public class BaseTest {
     protected DeviceHelper deviceHelper;
     private static final String APP_PACKAGE = "org.wikipedia";
     private String apkPath;
+    private static final Logger LOGGER = Logger.getLogger(BaseTest.class.getName());
 
     @BeforeClass
     public void setUpDriver() throws Exception {
@@ -50,14 +53,25 @@ public class BaseTest {
     public void tearDown() {
         if (driver != null) {
             try {
+                // Ensure deviceHelper is initialized before use
+                if (deviceHelper == null) {
+                    deviceHelper = new DeviceHelper(driver);
+                }
                 if (deviceHelper.isAppInstalled(APP_PACKAGE)) {
-                    System.out.println("[INFO] Uninstalling app: " + APP_PACKAGE);
+                    LOGGER.info("[INFO] Uninstalling app: " + APP_PACKAGE);
                     deviceHelper.uninstallApp(APP_PACKAGE);
                 }
             } catch (Exception e) {
-                System.out.println("[WARN] App uninstall failed: " + e.getMessage());
+                LOGGER.log(Level.WARNING, "[WARN] App uninstall failed: " + e.getMessage(), e);
             } finally {
-                deviceHelper.resetApp();  // ✅ ensures a clean state
+                try {
+                    if (deviceHelper == null) {
+                        deviceHelper = new DeviceHelper(driver);
+                    }
+                    deviceHelper.resetApp();  // ✅ ensures a clean state
+                } catch (Exception e) {
+                    LOGGER.log(Level.WARNING, "[WARN] App reset failed: " + e.getMessage(), e);
+                }
                 driver.quit();
             }
         }
