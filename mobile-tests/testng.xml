@@ -3,8 +3,7 @@
     <test name="AllMobileTests">
         <classes>
             <class name="com.example.base.TestSuiteSetup"/>
-            <class name="com.example.tests.LoginTest"/>
-            <!-- <class name="com.example.tests.SearchTest"/> -->
+            <class name="com.example.tests.WikipediaSearchTest"/>
         </classes>
     </test>
 </suite>

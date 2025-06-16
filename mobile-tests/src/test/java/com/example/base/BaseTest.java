@@ -1,9 +1,10 @@
 package com.example.base;
 
+import com.example.utils.DeviceHelper;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 
 import java.net.URL;
 import java.nio.file.Paths;
@@ -12,30 +13,45 @@ import java.time.Duration;
 public class BaseTest {
 
     protected AndroidDriver driver;
+    protected DeviceHelper deviceHelper;
+    private static final String APP_PACKAGE = "org.wikipedia";
+    private String apkPath;
 
     @BeforeClass
     public void setUpDriver() throws Exception {
-        String apkPath = Paths.get("src", "test", "resources", "apks", "org.wikipedia_50530.apk")
-                              .toAbsolutePath()
-                              .toString();
+        apkPath = Paths.get("src", "test", "resources", "apks", "org.wikipedia_50530.apk")
+                .toAbsolutePath()
+                .toString();
 
         UiAutomator2Options options = new UiAutomator2Options()
                 .setDeviceName("emulator-5554")
                 .setPlatformName("Android")
                 .setAutomationName("UiAutomator2")
                 .setApp(apkPath)
-                .setAppWaitActivity("org.wikipedia.onboarding.InitialOnboardingActivity")
-                .autoGrantPermissions();
-
+                .autoGrantPermissions()
+                .setAppPackage(APP_PACKAGE)
+                .setAppActivity("org.wikipedia.main.MainActivity")
+                .setAppWaitActivity("org.wikipedia.onboarding.InitialOnboardingActivity");
 
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+
+        deviceHelper = new DeviceHelper(driver);
     }
 
-    @AfterClass
+    @AfterClass(alwaysRun = true)
     public void tearDown() {
         if (driver != null) {
-            driver.quit();
+            try {
+                if (deviceHelper.isAppInstalled(APP_PACKAGE)) {
+                    System.out.println("[INFO] Uninstalling app: " + APP_PACKAGE);
+                    deviceHelper.uninstallApp(APP_PACKAGE);
+                }
+            } catch (Exception e) {
+                System.out.println("[WARN] App uninstall failed: " + e.getMessage());
+            } finally {
+                driver.quit();
+            }
         }
     }
 }

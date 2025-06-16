@@ -1,0 +1,68 @@
+package com.example.tests;
+
+import io.appium.java_client.android.AndroidDriver;
+import io.qameta.allure.Description;
+import io.qameta.allure.Step;
+
+import java.lang.reflect.Method;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import com.example.base.BaseTest;
+
+public class WikipediaSearchTest extends BaseTest {
+
+    @BeforeMethod
+    public void prepareApp(Method method) {
+        
+        System.out.println("[BeforeMethod] Resetting app for test: " + method.getName());
+        driver.reset(); // Ensures clean state
+        skipOnboardingIfPresent(); // Conditionally skip onboarding screen
+    }
+
+    @Test(dataProvider = "searchTerms")
+    @Description("Searches for terms in the Wikipedia app and verifies results")
+    public void testSearchForTerm(String term) {
+        performSearch(term);
+        verifyResults();
+    }
+
+    @DataProvider(name = "searchTerms")
+    public Object[][] searchTerms() {
+        return new Object[][] {
+            {"Appium"},
+            {"TestNG"},
+            {"Android"},
+            {"Selenium"}
+        };
+    }
+
+    @Step("Skip onboarding screen if present")
+    public void skipOnboardingIfPresent() {
+        List<WebElement> skipButtons = driver.findElements(By.id("org.wikipedia:id/fragment_onboarding_skip_button"));
+        if (!skipButtons.isEmpty()) {
+            skipButtons.get(0).click();
+            System.out.println("[INFO] Onboarding skipped.");
+        } else {
+            System.out.println("[INFO] Onboarding not present.");
+        }
+    }
+
+    @Step("Search for term: {term}")
+    public void performSearch(String term) {
+        driver.findElement(By.id("org.wikipedia:id/search_container")).click();
+        driver.findElement(By.id("org.wikipedia:id/search_src_text")).sendKeys(term);
+    }
+
+    @Step("Verify at least one search result appears")
+    public void verifyResults() {
+        List<WebElement> results = driver.findElements(By.id("org.wikipedia:id/page_list_item_title"));
+        Assert.assertTrue(results.size() > 0, "Expected search results to appear.");
+    }
+}
