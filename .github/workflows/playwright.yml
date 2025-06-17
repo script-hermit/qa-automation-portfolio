@@ -38,6 +38,12 @@ jobs:
           cd web-tests
           npx playwright install
 
+      - name: Install Playwright dependencies
+        if: runner.os == 'Linux'
+        run: |
+          cd web-tests
+          npx playwright install-deps
+
       - name: Run tests
         run: |
           cd web-tests
