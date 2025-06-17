@@ -55,10 +55,28 @@ jobs:
           disable-animations: true
           script: |
             nohup appium --log appium.log &
-            sleep 10 && adb wait-for-device && sleep 30
+            sleep 10
+            adb wait-for-device
+            # Wait until sys.boot_completed is 1
+            boot_completed=""
+            timeout=120
+            elapsed=0
+            while [ "$boot_completed" != "1" ] && [ $elapsed -lt $timeout ]; do
+              boot_completed=$(adb shell getprop sys.boot_completed 2>/dev/null | tr -d '\r')
+              if [ "$boot_completed" != "1" ]; then
+                sleep 5
+                elapsed=$((elapsed+5))
+              fi
+            done
+            echo "Emulator boot_completed=$boot_completed after $elapsed seconds"
+            echo "Device boot animation status:"
+            adb shell getprop init.svc.bootanim
+            echo "Device boot completed property:"
+            adb shell getprop sys.boot_completed
+            echo "Waiting extra 60 seconds for device to settle..."
+            sleep 60  # Increased buffer for Play Store/Play Services and device readiness
             cd mobile-tests
             mvn clean test || echo "Tests failed"
-            # Always attempt to generate report
             allure generate allure-results --clean -o allure-report || echo "Allure generation failed"
 
       - name: Upload Allure report
