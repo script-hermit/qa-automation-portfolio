@@ -43,3 +43,8 @@ jobs:
         with:
           name: api-allure-report
           path: api-tests/allure-report
+
+      - name: List Allure results
+        run: |
+          ls -l api-tests/allure-results || echo "No allure-results directory"
+          cat api-tests/allure-results/* || echo "No files to cat"
