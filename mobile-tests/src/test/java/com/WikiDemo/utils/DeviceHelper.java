@@ -1,9 +1,13 @@
-package com.WikiDemo.utils;
+package com.wikidemo.utils;
 
 import java.time.Duration;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class DeviceHelper {
     private AppiumDriver driver;
@@ -26,6 +30,25 @@ public class DeviceHelper {
     private boolean isAndroid() {
         return driver instanceof io.appium.java_client.android.AndroidDriver;
     }
+
+    // --- Utility Wait Methods ---
+
+    public WebElement waitForElementVisible(By locator, int timeoutSeconds) {
+        return new WebDriverWait(driver, Duration.ofSeconds(timeoutSeconds))
+                .until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+
+    public WebElement waitForElementClickable(By locator, int timeoutSeconds) {
+        return new WebDriverWait(driver, Duration.ofSeconds(timeoutSeconds))
+                .until(ExpectedConditions.elementToBeClickable(locator));
+    }
+
+    public boolean waitForElementInvisible(By locator, int timeoutSeconds) {
+        return new WebDriverWait(driver, Duration.ofSeconds(timeoutSeconds))
+                .until(ExpectedConditions.invisibilityOfElementLocated(locator));
+    }
+
+    // --- Existing methods below ---
 
     public void uninstallApp(String appPackage) {
         if (driver instanceof io.appium.java_client.android.AndroidDriver) {

@@ -3,7 +3,7 @@
 [![Playwright Tests](https://github.com/script-hermit/qa-automation-portfolio/actions/workflows/playwright.yml/badge.svg)](https://github.com/script-hermit/qa-automation-portfolio/actions/workflows/playwright.yml)
 [![Mobile Tests](https://github.com/script-hermit/qa-automation-portfolio/actions/workflows/mobile-test.yml/badge.svg)](https://github.com/script-hermit/qa-automation-portfolio/actions/workflows/mobile-test.yml)
 
-A showcase of my QA automation skills across web, mobile, and API testing. This repo highlights real-world test strategies using Playwright, Appium (Java + TestNG), Postman, and GitHub Actions for CI/CD integration.
+A showcase of my QA automation skills across web, mobile, and API testing. This repo highlights real-world test strategies using Playwright, Appium (Java + TestNG), Rest-Assured (Java), and GitHub Actions for CI/CD integration.
 
 ---
 
@@ -13,7 +13,7 @@ A showcase of my QA automation skills across web, mobile, and API testing. This 
 qa-automation-portfolio/
 ├── web-tests/             # Web UI automation with Playwright
 ├── mobile-tests/          # Mobile automation using Appium (Java + TestNG)
-├── api-tests/             # API testing with Postman collections
+├── api-tests/             # API testing with Rest-Assured (Java + TestNG)
 ├── .github/workflows/     # CI/CD workflows for GitHub Actions
 └── README.md              # Project overview and usage instructions
 ```
@@ -24,7 +24,8 @@ qa-automation-portfolio/
 
 - **Web Testing**: Automated UI tests for modern web apps (e.g., login flows, form validation) using Playwright.
 - **Mobile Testing**: Android emulator-based tests using Appium 2.x, Java, and TestNG. CI runs on GitHub Actions with a real emulator and Allure HTML reporting.
-- **API Testing**: REST API tests via Postman and Newman with data-driven assertions and reporting.
+- **API Testing**: REST API tests via Rest-Assured (Java + TestNG) with data-driven assertions and Allure reporting.  
+  <sup>_(Optional: You can also add Postman collections and Newman if desired.)_</sup>
 - **CI/CD Integration**: GitHub Actions workflows for all test suites, including mobile tests on an Android emulator.
 - **Artifacts & Reporting**: Screenshots, logs, and HTML test reports (including Allure) exported from CI as downloadable artifacts.
 
@@ -53,7 +54,7 @@ npx playwright install
 
 #### Mobile Tests
 
-- Ensure **Java 22+**, **Maven**, **Node.js**, and **Appium 2.x** are installed.
+- Ensure **Java 21+**, **Maven**, **Node.js**, and **Appium 2.x** are installed.
 - Install the Appium UiAutomator2 driver:
   ```bash
   npm install -g appium
@@ -71,10 +72,15 @@ mvn test
 
 #### API Tests
 
+- Ensure **Java 21+** and **Maven** are installed.
+- Run API tests using Maven (Rest-Assured + TestNG):
+
 ```bash
 cd api-tests
-newman run collection.json -e environment.json
+mvn test
 ```
+
+<sup>_(Optional: If you add Postman collections, you can run them with Newman as well.)_</sup>
 
 ---
 
@@ -89,15 +95,15 @@ CI is configured to:
 To view results:
 1. Click on the **Actions** tab above
 2. Open the latest workflow run (e.g., "Mobile Tests with Allure")
-3. Download the `allure-report` artifact for mobile test results
+3. Download the `allure-report` artifact for mobile or API test results
 
 ---
 
 ## 📸 Example Artifacts
 
 - ✅ Playwright screenshots and HTML reports
-- ✅ API test logs and response validation
-- ✅ Allure HTML reports for mobile tests (downloadable from CI)
+- ✅ API test logs and response validation (Rest-Assured)
+- ✅ Allure HTML reports for mobile and API tests (downloadable from CI)
 - ⏳ Video recording (optional, coming soon)
 
 ---
@@ -108,7 +114,7 @@ To view results:
 |----------------|--------------------------------------|
 | Web Automation | Playwright, Node.js, HTML Reports    |
 | Mobile Testing | Appium 2.x, Java, TestNG, Maven, Allure, Android Emulator |
-| API Testing    | Postman, Newman, JSON Schemas        |
+| API Testing    | Rest-Assured, TestNG, Allure <br>_(Optional: Postman, Newman)_ |
 | CI/CD          | GitHub Actions, YAML Pipelines       |
 
 ---

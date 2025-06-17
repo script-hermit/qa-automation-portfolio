@@ -1,4 +1,4 @@
-package com.WikiDemo.listeners;
+package com.wikidemo.listeners;
 
 import io.appium.java_client.AppiumDriver;
 import org.apache.commons.io.FileUtils;

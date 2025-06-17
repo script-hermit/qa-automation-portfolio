@@ -1,4 +1,4 @@
-package com.WikiDemo.tests;
+package com.wikidemo.tests;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.qameta.allure.Description;
@@ -17,7 +17,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.WikiDemo.base.BaseTest;
+import com.wikidemo.base.BaseTest;
 
 import io.appium.java_client.android.nativekey.KeyEvent;
 import io.appium.java_client.android.nativekey.AndroidKey;

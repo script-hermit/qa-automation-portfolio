@@ -1,4 +1,4 @@
-package com.WikiDemo.base;
+package com.wikidemo.base;
 
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;

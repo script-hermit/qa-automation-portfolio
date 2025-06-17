@@ -1,4 +1,4 @@
-package com.WikiDemo.base;
+package com.wikidemo.base;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
@@ -6,14 +6,18 @@ import io.appium.java_client.android.options.UiAutomator2Options;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
-import com.WikiDemo.utils.DeviceHelper;
+import com.wikidemo.utils.DeviceHelper;
 
 import java.net.URI;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.Duration;
+import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.io.FileInputStream;
 
 public class BaseTest {
 
@@ -25,12 +29,32 @@ public class BaseTest {
 
     @BeforeClass
     public void setUpDriver() throws Exception {
-        apkPath = Paths.get("src", "test", "resources", "apks", "org.wikipedia_50530.apk")
-                .toAbsolutePath()
-                .toString();
+        // Load properties from mobile-tests/config.properties if present
+        Properties props = new Properties();
+        Path configPath = Paths.get("mobile-tests", "config.properties");
+        if (Files.exists(configPath)) {
+            try (FileInputStream fis = new FileInputStream(configPath.toFile())) {
+                props.load(fis);
+                LOGGER.info("Loaded properties from mobile-tests/config.properties");
+            }
+        } else {
+            LOGGER.warning("mobile-tests/config.properties not found, using defaults and system properties.");
+        }
+
+        // Allow override via system properties
+        String deviceName = System.getProperty("deviceName", props.getProperty("deviceName", "emulator-5554"));
+        apkPath = System.getProperty(
+            "apkPath",
+            props.getProperty(
+                "apkPath",
+                Paths.get("src", "test", "resources", "apks", "org.wikipedia_50530.apk")
+                    .toAbsolutePath()
+                    .toString()
+            )
+        );
 
         UiAutomator2Options options = new UiAutomator2Options()
-                .setDeviceName("emulator-5554")
+                .setDeviceName(deviceName)
                 .setPlatformName("Android")
                 .setAutomationName("UiAutomator2")
                 .setApp(apkPath)
@@ -40,11 +64,11 @@ public class BaseTest {
                 .setAppWaitActivity("*")
                 .amend("fullReset", true)
                 .amend("noReset", false)
-                .amend("androidInstallTimeout", 180000); // <-- Add this line (3 minutes)
+                .amend("androidInstallTimeout", 180000);
 
         URL url = URI.create("http://127.0.0.1:4723").toURL();
         driver = new AndroidDriver(url, options);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
 
         deviceHelper = new DeviceHelper(driver);
     }

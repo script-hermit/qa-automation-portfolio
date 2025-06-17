@@ -4,12 +4,13 @@
     <!-- ✅ Add this block to enable Allure TestNG integration -->
     <listeners>
         <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+        <listener class-name="com.wikidemo.listeners.TestListener"/>
     </listeners>
 
     <test name="AllMobileTests">
         <classes>
-            <class name="com.WikiDemo.base.TestSuiteSetup"/>
-            <class name="com.WikiDemo.tests.WikipediaSearchTest"/>
+            <class name="com.wikidemo.base.TestSuiteSetup"/>
+            <class name="com.wikidemo.tests.WikipediaSearchTest"/>
         </classes>
     </test>
 
