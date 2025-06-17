@@ -54,6 +54,8 @@ jobs:
           emulator-options: -no-window -noaudio -no-boot-anim
           disable-animations: true
           script: |
+            pwd
+            ls -l
             nohup appium --log appium.log &
             sleep 10
             adb wait-for-device
