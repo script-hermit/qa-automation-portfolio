@@ -6,6 +6,7 @@ on:
 jobs:
   mobile-tests:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
 
     steps:
       - name: Checkout code
@@ -42,35 +43,37 @@ jobs:
           emulator-options: -no-window -noaudio -no-boot-anim
           disable-animations: true
           script: |
-            set -e
-            pwd
-            ls -l
+            bash -c '
+              set -e
+              pwd
+              ls -l
 
-            nohup appium --log appium.log &
-            sleep 10
-            adb wait-for-device
+              nohup appium --log appium.log &
+              sleep 10
+              adb wait-for-device
 
-            echo "Waiting 120 seconds for device to fully settle..."
-            sleep 120
+              echo "Waiting 120 seconds for device to fully settle..."
+              sleep 120
 
-            SETTINGS_APK="/home/runner/.appium/node_modules/appium-uiautomator2-driver/node_modules/io.appium.settings/apks/settings_apk-debug.apk"
-            if [ -f "$SETTINGS_APK" ]; then
-              echo "Attempting manual install of Appium settings APK"
-              adb install -r "$SETTINGS_APK" || true
-            else
-              echo "Settings APK not found, skipping manual install"
-            fi
+              SETTINGS_APK="/home/runner/.appium/node_modules/appium-uiautomator2-driver/node_modules/io.appium.settings/apks/settings_apk-debug.apk"
+              if [ -f "$SETTINGS_APK" ]; then
+                echo "Attempting manual install of Appium settings APK"
+                adb install -r "$SETTINGS_APK" || true
+              else
+                echo "Settings APK not found, skipping manual install"
+              fi
 
-            cd mobile-tests && mvn clean test
-            TEST_EXIT_CODE=$?
-            echo "Tests completed with exit code $TEST_EXIT_CODE"
+              cd mobile-tests && mvn clean test
+              TEST_EXIT_CODE=$?
+              echo "Tests completed with exit code $TEST_EXIT_CODE"
 
-            allure generate allure-results --clean -o allure-report || echo "Allure generation failed"
+              allure generate allure-results --clean -o allure-report || echo "Allure generation failed"
 
-            echo "Killing emulator and Appium server..."
-            adb -s emulator-5554 emu kill || echo "Emulator not running"
-            pkill -f appium || echo "Appium not running"
-            exit $TEST_EXIT_CODE
+              echo "Killing emulator and Appium server..."
+              adb -s emulator-5554 emu kill || echo "Emulator not running"
+              pkill -f appium || echo "Appium not running"
+              exit $TEST_EXIT_CODE
+            '
 
       - name: Upload Allure report
         if: always()
