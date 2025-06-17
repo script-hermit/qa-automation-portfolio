@@ -1,5 +1,6 @@
-com\WikiDemo\base\TestSuiteSetup.class
-com\WikiDemo\utils\DeviceHelper.class
-com\WikiDemo\base\BaseTest.class
-com\WikiDemo\utils\TestListener.class
-com\WikiDemo\tests\WikipediaSearchTest.class
+com\wikidemo\pages\WikipediaMainPage.class
+com\wikidemo\tests\WikipediaSearchTest.class
+com\wikidemo\utils\DeviceHelper.class
+com\wikidemo\base\TestSuiteSetup.class
+com\wikidemo\base\BaseTest.class
+com\wikidemo\listeners\TestListener.class

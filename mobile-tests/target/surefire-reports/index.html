@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-MobileTestSuite" class="navigator-link">
-              <span class="suite-name border-passed">MobileTestSuite</span>
+              <span class="suite-name border-skipped">MobileTestSuite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,36 +92,36 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods,   4 passed</span>
+                    <span class="method-stats">4 methods,  4 skipped,  </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-MobileTestSuite" class="hide-methods passed suite-MobileTestSuite"> (hide)</a> <!-- hide-methods passed suite-MobileTestSuite -->
-                      <a href="#" panel-name="suite-MobileTestSuite" class="show-methods passed suite-MobileTestSuite"> (show)</a> <!-- show-methods passed suite-MobileTestSuite -->
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-MobileTestSuite" class="hide-methods skipped suite-MobileTestSuite"> (hide)</a> <!-- hide-methods skipped suite-MobileTestSuite -->
+                      <a href="#" panel-name="suite-MobileTestSuite" class="show-methods skipped suite-MobileTestSuite"> (show)</a> <!-- show-methods skipped suite-MobileTestSuite -->
                     </span>
-                    <div class="method-list-content passed suite-MobileTestSuite">
+                    <div class="method-list-content skipped suite-MobileTestSuite">
                       <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-MobileTestSuite" title="com.WikiDemo.tests.WikipediaSearchTest" class="method navigator-link" hash-for-method="testSearchForTerm(Android)">testSearchForTerm(Android)</a> <!-- method navigator-link -->
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-MobileTestSuite" title="com.wikidemo.tests.WikipediaSearchTest" class="method navigator-link" hash-for-method="shouldDisplayResultsForSearchTerm(Selenium)">shouldDisplayResultsForSearchTerm(Selenium)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-MobileTestSuite" title="com.WikiDemo.tests.WikipediaSearchTest" class="method navigator-link" hash-for-method="testSearchForTerm(Selenium)">testSearchForTerm(Selenium)</a> <!-- method navigator-link -->
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-MobileTestSuite" title="com.wikidemo.tests.WikipediaSearchTest" class="method navigator-link" hash-for-method="shouldDisplayResultsForSearchTerm(Android)">shouldDisplayResultsForSearchTerm(Android)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-MobileTestSuite" title="com.WikiDemo.tests.WikipediaSearchTest" class="method navigator-link" hash-for-method="testSearchForTerm(Appium)">testSearchForTerm(Appium)</a> <!-- method navigator-link -->
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-MobileTestSuite" title="com.wikidemo.tests.WikipediaSearchTest" class="method navigator-link" hash-for-method="shouldDisplayResultsForSearchTerm(Appium)">shouldDisplayResultsForSearchTerm(Appium)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-MobileTestSuite" title="com.WikiDemo.tests.WikipediaSearchTest" class="method navigator-link" hash-for-method="testSearchForTerm(TestNG)">testSearchForTerm(TestNG)</a> <!-- method navigator-link -->
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-MobileTestSuite" title="com.wikidemo.tests.WikipediaSearchTest" class="method navigator-link" hash-for-method="shouldDisplayResultsForSearchTerm(TestNG)">shouldDisplayResultsForSearchTerm(TestNG)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-MobileTestSuite -->
+                    </div> <!-- method-list-content skipped suite-MobileTestSuite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -133,46 +133,258 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-MobileTestSuite" class="panel MobileTestSuite">
-          <div class="suite-MobileTestSuite-class-passed">
+          <div class="suite-MobileTestSuite-class-skipped">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.WikiDemo.tests.WikipediaSearchTest</span>
+              <img src="skipped.png"/>
+              <span class="class-name">com.wikidemo.tests.WikipediaSearchTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="testSearchForTerm(Android)">
-                  </a> <!-- testSearchForTerm(Android) -->
-                  <span class="method-name">testSearchForTerm</span>
-                  <span class="parameters">(Android)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testSearchForTerm(Selenium)">
-                  </a> <!-- testSearchForTerm(Selenium) -->
-                  <span class="method-name">testSearchForTerm</span>
+                  <a name="shouldDisplayResultsForSearchTerm(Selenium)">
+                  </a> <!-- shouldDisplayResultsForSearchTerm(Selenium) -->
+                  <span class="method-name">shouldDisplayResultsForSearchTerm</span>
                   <span class="parameters">(Selenium)</span>
+                  <div class="stack-trace">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: &apos;DESKTOP-MLBBIN1&apos;, ip: &apos;10.5.0.2&apos;
+Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.1&apos;
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [null, newSession {capabilities=[Capabilities {appium:androidInstallTimeout: 300000, appium:app: C:\Users\danev\qaRepo\qa-au..., appium:appActivity: org.wikipedia.main.MainActi..., appium:appPackage: org.wikipedia, appium:appWaitActivity: *, appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, appium:fullReset: true, appium:noReset: false, platformName: ANDROID}]}]
+Capabilities {appium:androidInstallTimeout: 300000, appium:app: C:\Users\danev\qaRepo\qa-au..., appium:appActivity: org.wikipedia.main.MainActi..., appium:appPackage: org.wikipedia, appium:appWaitActivity: *, appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, appium:fullReset: true, appium:noReset: false, platformName: ANDROID}
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:562)
+	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:270)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:173)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:91)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:103)
+	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:109)
+	at com.wikidemo.base.BaseTest.setUpDriver(BaseTest.java:70)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+Caused by: java.io.UncheckedIOException: java.net.ConnectException
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:500)
+	at io.appium.java_client.internal.filters.AppiumIdempotencyFilter.lambda$apply$0(AppiumIdempotencyFilter.java:35)
+	at io.appium.java_client.internal.filters.AppiumUserAgentFilter.lambda$apply$0(AppiumUserAgentFilter.java:87)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.lambda$executeAsync$2(JdkHttpClient.java:387)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:956)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:459)
+	... 9 more
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1065)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:227)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:280)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$2(PlainHttpConnection.java:238)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	... 3 more
+Caused by: java.nio.channels.ClosedChannelException
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:204)
+	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:873)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:961)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:210)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:212)
+	... 9 more
+... Removed 27 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Verify Wikipedia search returns results for various terms)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="testSearchForTerm(Appium)">
-                  </a> <!-- testSearchForTerm(Appium) -->
-                  <span class="method-name">testSearchForTerm</span>
+                  <a name="shouldDisplayResultsForSearchTerm(Android)">
+                  </a> <!-- shouldDisplayResultsForSearchTerm(Android) -->
+                  <span class="method-name">shouldDisplayResultsForSearchTerm</span>
+                  <span class="parameters">(Android)</span>
+                  <div class="stack-trace">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: &apos;DESKTOP-MLBBIN1&apos;, ip: &apos;10.5.0.2&apos;
+Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.1&apos;
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [null, newSession {capabilities=[Capabilities {appium:androidInstallTimeout: 300000, appium:app: C:\Users\danev\qaRepo\qa-au..., appium:appActivity: org.wikipedia.main.MainActi..., appium:appPackage: org.wikipedia, appium:appWaitActivity: *, appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, appium:fullReset: true, appium:noReset: false, platformName: ANDROID}]}]
+Capabilities {appium:androidInstallTimeout: 300000, appium:app: C:\Users\danev\qaRepo\qa-au..., appium:appActivity: org.wikipedia.main.MainActi..., appium:appPackage: org.wikipedia, appium:appWaitActivity: *, appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, appium:fullReset: true, appium:noReset: false, platformName: ANDROID}
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:562)
+	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:270)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:173)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:91)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:103)
+	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:109)
+	at com.wikidemo.base.BaseTest.setUpDriver(BaseTest.java:70)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+Caused by: java.io.UncheckedIOException: java.net.ConnectException
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:500)
+	at io.appium.java_client.internal.filters.AppiumIdempotencyFilter.lambda$apply$0(AppiumIdempotencyFilter.java:35)
+	at io.appium.java_client.internal.filters.AppiumUserAgentFilter.lambda$apply$0(AppiumUserAgentFilter.java:87)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.lambda$executeAsync$2(JdkHttpClient.java:387)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:956)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:459)
+	... 9 more
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1065)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:227)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:280)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$2(PlainHttpConnection.java:238)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	... 3 more
+Caused by: java.nio.channels.ClosedChannelException
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:204)
+	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:873)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:961)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:210)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:212)
+	... 9 more
+... Removed 27 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Verify Wikipedia search returns results for various terms)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="shouldDisplayResultsForSearchTerm(Appium)">
+                  </a> <!-- shouldDisplayResultsForSearchTerm(Appium) -->
+                  <span class="method-name">shouldDisplayResultsForSearchTerm</span>
                   <span class="parameters">(Appium)</span>
+                  <div class="stack-trace">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: &apos;DESKTOP-MLBBIN1&apos;, ip: &apos;10.5.0.2&apos;
+Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.1&apos;
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [null, newSession {capabilities=[Capabilities {appium:androidInstallTimeout: 300000, appium:app: C:\Users\danev\qaRepo\qa-au..., appium:appActivity: org.wikipedia.main.MainActi..., appium:appPackage: org.wikipedia, appium:appWaitActivity: *, appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, appium:fullReset: true, appium:noReset: false, platformName: ANDROID}]}]
+Capabilities {appium:androidInstallTimeout: 300000, appium:app: C:\Users\danev\qaRepo\qa-au..., appium:appActivity: org.wikipedia.main.MainActi..., appium:appPackage: org.wikipedia, appium:appWaitActivity: *, appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, appium:fullReset: true, appium:noReset: false, platformName: ANDROID}
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:562)
+	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:270)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:173)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:91)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:103)
+	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:109)
+	at com.wikidemo.base.BaseTest.setUpDriver(BaseTest.java:70)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+Caused by: java.io.UncheckedIOException: java.net.ConnectException
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:500)
+	at io.appium.java_client.internal.filters.AppiumIdempotencyFilter.lambda$apply$0(AppiumIdempotencyFilter.java:35)
+	at io.appium.java_client.internal.filters.AppiumUserAgentFilter.lambda$apply$0(AppiumUserAgentFilter.java:87)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.lambda$executeAsync$2(JdkHttpClient.java:387)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:956)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:459)
+	... 9 more
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1065)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:227)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:280)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$2(PlainHttpConnection.java:238)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	... 3 more
+Caused by: java.nio.channels.ClosedChannelException
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:204)
+	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:873)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:961)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:210)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:212)
+	... 9 more
+... Removed 27 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Verify Wikipedia search returns results for various terms)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="testSearchForTerm(TestNG)">
-                  </a> <!-- testSearchForTerm(TestNG) -->
-                  <span class="method-name">testSearchForTerm</span>
+                  <a name="shouldDisplayResultsForSearchTerm(TestNG)">
+                  </a> <!-- shouldDisplayResultsForSearchTerm(TestNG) -->
+                  <span class="method-name">shouldDisplayResultsForSearchTerm</span>
                   <span class="parameters">(TestNG)</span>
+                  <div class="stack-trace">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: &apos;DESKTOP-MLBBIN1&apos;, ip: &apos;10.5.0.2&apos;
+Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.1&apos;
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [null, newSession {capabilities=[Capabilities {appium:androidInstallTimeout: 300000, appium:app: C:\Users\danev\qaRepo\qa-au..., appium:appActivity: org.wikipedia.main.MainActi..., appium:appPackage: org.wikipedia, appium:appWaitActivity: *, appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, appium:fullReset: true, appium:noReset: false, platformName: ANDROID}]}]
+Capabilities {appium:androidInstallTimeout: 300000, appium:app: C:\Users\danev\qaRepo\qa-au..., appium:appActivity: org.wikipedia.main.MainActi..., appium:appPackage: org.wikipedia, appium:appWaitActivity: *, appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, appium:fullReset: true, appium:noReset: false, platformName: ANDROID}
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:562)
+	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:270)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:173)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:91)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:103)
+	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:109)
+	at com.wikidemo.base.BaseTest.setUpDriver(BaseTest.java:70)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+Caused by: java.io.UncheckedIOException: java.net.ConnectException
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:500)
+	at io.appium.java_client.internal.filters.AppiumIdempotencyFilter.lambda$apply$0(AppiumIdempotencyFilter.java:35)
+	at io.appium.java_client.internal.filters.AppiumUserAgentFilter.lambda$apply$0(AppiumUserAgentFilter.java:87)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.lambda$executeAsync$2(JdkHttpClient.java:387)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:956)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:459)
+	... 9 more
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1065)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:227)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:280)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$2(PlainHttpConnection.java:238)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	... 3 more
+Caused by: java.nio.channels.ClosedChannelException
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:204)
+	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:873)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:961)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:210)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:212)
+	... 9 more
+... Removed 27 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Verify Wikipedia search returns results for various terms)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-MobileTestSuite-class-passed -->
+          </div> <!-- suite-MobileTestSuite-class-skipped -->
         </div> <!-- panel MobileTestSuite -->
         <div panel-name="test-xml-MobileTestSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -185,11 +397,12 @@
 &lt;suite name=&quot;MobileTestSuite&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
   &lt;listeners&gt;
     &lt;listener class-name=&quot;io.qameta.allure.testng.AllureTestNg&quot;/&gt;
+    &lt;listener class-name=&quot;com.wikidemo.listeners.TestListener&quot;/&gt;
   &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;AllMobileTests&quot; verbose=&quot;0&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.WikiDemo.base.TestSuiteSetup&quot;/&gt;
-      &lt;class name=&quot;com.WikiDemo.tests.WikipediaSearchTest&quot;/&gt;
+      &lt;class name=&quot;com.wikidemo.base.TestSuiteSetup&quot;/&gt;
+      &lt;class name=&quot;com.wikidemo.tests.WikipediaSearchTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- AllMobileTests --&gt;
 &lt;/suite&gt; &lt;!-- MobileTestSuite --&gt;
@@ -231,26 +444,26 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(4);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'testSearchForTerm')
-data.setCell(0, 2, 'com.WikiDemo.tests.WikipediaSearchTest')
-data.setCell(0, 3, 5844);
+data.setCell(0, 1, 'shouldDisplayResultsForSearchTerm')
+data.setCell(0, 2, 'com.wikidemo.tests.WikipediaSearchTest')
+data.setCell(0, 3, 0);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'testSearchForTerm')
-data.setCell(1, 2, 'com.WikiDemo.tests.WikipediaSearchTest')
-data.setCell(1, 3, 5689);
+data.setCell(1, 1, 'shouldDisplayResultsForSearchTerm')
+data.setCell(1, 2, 'com.wikidemo.tests.WikipediaSearchTest')
+data.setCell(1, 3, 0);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'testSearchForTerm')
-data.setCell(2, 2, 'com.WikiDemo.tests.WikipediaSearchTest')
-data.setCell(2, 3, 5638);
+data.setCell(2, 1, 'shouldDisplayResultsForSearchTerm')
+data.setCell(2, 2, 'com.wikidemo.tests.WikipediaSearchTest')
+data.setCell(2, 3, 0);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'testSearchForTerm')
-data.setCell(3, 2, 'com.WikiDemo.tests.WikipediaSearchTest')
-data.setCell(3, 3, 4488);
+data.setCell(3, 1, 'shouldDisplayResultsForSearchTerm')
+data.setCell(3, 2, 'com.wikidemo.tests.WikipediaSearchTest')
+data.setCell(3, 3, 0);
 window.suiteTableData['MobileTestSuite']= { tableData: data, tableDiv: 'times-div-MobileTestSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 21 seconds</span>
+              <span class="suite-total-time">Total running time: 0 ms</span>
               <div id="times-div-MobileTestSuite">
               </div> <!-- times-div-MobileTestSuite -->
             </div> <!-- times-div -->
@@ -276,60 +489,62 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.WikiDemo.base.TestSuiteSetup</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.wikidemo.base.TestSuiteSetup</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">startAppiumServer</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">com.WikiDemo.tests.WikipediaSearchTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.wikidemo.tests.WikipediaSearchTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">setUpDriver</span>
-                <span class="method-start">2080 ms</span>
+                <span class="method-start">35 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
-                <span class="method-name">prepareApp(public void com.WikiDemo.tests.WikipediaSearchTest.testSearchForTerm(java.lang.String))</span>
-                <span class="method-start">9008 ms</span>
+                <span class="method-name">prepareApp</span>
+                <span class="method-start">329 ms</span>
               </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">testSearchForTerm(Appium)</span>
-                <span class="method-start">11407 ms</span>
-              </div> <!-- test-method -->
               <div class="configuration-method before">
-                <span class="method-name">prepareApp(public void com.WikiDemo.tests.WikipediaSearchTest.testSearchForTerm(java.lang.String))</span>
-                <span class="method-start">15904 ms</span>
+                <span class="method-name">prepareApp</span>
+                <span class="method-start">345 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">testSearchForTerm(TestNG)</span>
-                <span class="method-start">20897 ms</span>
+                <span class="method-name">shouldDisplayResultsForSearchTerm(Appium)</span>
+                <span class="method-start">345 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method before">
-                <span class="method-name">prepareApp(public void com.WikiDemo.tests.WikipediaSearchTest.testSearchForTerm(java.lang.String))</span>
-                <span class="method-start">26589 ms</span>
-              </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">testSearchForTerm(Android)</span>
-                <span class="method-start">31395 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method before">
-                <span class="method-name">prepareApp(public void com.WikiDemo.tests.WikipediaSearchTest.testSearchForTerm(java.lang.String))</span>
-                <span class="method-start">37035 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">testSearchForTerm(Selenium)</span>
-                <span class="method-start">41891 ms</span>
+                <span class="method-name">shouldDisplayResultsForSearchTerm(TestNG)</span>
+                <span class="method-start">345 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">47736 ms</span>
+                <span class="method-start">360 ms</span>
               </div> <!-- configuration-class after -->
+              <div class="configuration-method before">
+                <span class="method-name">prepareApp</span>
+                <span class="method-start">360 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">shouldDisplayResultsForSearchTerm(Selenium)</span>
+                <span class="method-start">360 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">prepareApp</span>
+                <span class="method-start">360 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">shouldDisplayResultsForSearchTerm(Android)</span>
+                <span class="method-start">360 ms</span>
+              </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">com.WikiDemo.base.TestSuiteSetup</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.wikidemo.base.TestSuiteSetup</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">stopAppiumServer</span>
-                <span class="method-start">48691 ms</span>
+                <span class="method-start">388 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -1,5 +1,6 @@
-C:\Users\danev\qaRepo\qa-automation-portfolio\mobile-tests\src\test\java\com\WikiDemo\utils\TestListener.java
-C:\Users\danev\qaRepo\qa-automation-portfolio\mobile-tests\src\test\java\com\WikiDemo\tests\WikipediaSearchTest.java
-C:\Users\danev\qaRepo\qa-automation-portfolio\mobile-tests\src\test\java\com\WikiDemo\base\BaseTest.java
-C:\Users\danev\qaRepo\qa-automation-portfolio\mobile-tests\src\test\java\com\WikiDemo\base\TestSuiteSetup.java
-C:\Users\danev\qaRepo\qa-automation-portfolio\mobile-tests\src\test\java\com\WikiDemo\utils\DeviceHelper.java
+C:\Users\danev\qaRepo\qa-automation-portfolio\mobile-tests\src\test\java\com\wikidemo\tests\WikipediaSearchTest.java
+C:\Users\danev\qaRepo\qa-automation-portfolio\mobile-tests\src\test\java\com\wikidemo\base\BaseTest.java
+C:\Users\danev\qaRepo\qa-automation-portfolio\mobile-tests\src\test\java\com\wikidemo\base\TestSuiteSetup.java
+C:\Users\danev\qaRepo\qa-automation-portfolio\mobile-tests\src\test\java\com\wikidemo\pages\WikipediaMainPage.java
+C:\Users\danev\qaRepo\qa-automation-portfolio\mobile-tests\src\test\java\com\wikidemo\utils\DeviceHelper.java
+C:\Users\danev\qaRepo\qa-automation-portfolio\mobile-tests\src\test\java\com\wikidemo\listeners\TestListener.java

@@ -67,8 +67,8 @@ jobs:
             adb shell getprop sys.boot_completed
             echo "Waiting extra 60 seconds for device to settle..."
             sleep 60
-            cd mobile-tests
-            mvn clean test || echo "Tests failed"
+            cd mobile-tests && mvn clean test || echo "Tests failed"
+            echo "Tests completed with exit code $?"
             allure generate allure-results --clean -o allure-report || echo "Allure generation failed"
 
       - name: Upload Allure report
