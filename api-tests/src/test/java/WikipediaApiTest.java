@@ -2,12 +2,15 @@ import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.qameta.allure.Description;
 import io.qameta.allure.Attachment;
+import io.qameta.allure.testng.AllureTestNg;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
+@Listeners({AllureTestNg.class})
 public class WikipediaApiTest { 
 
     @DataProvider(name = "searchTerms")
