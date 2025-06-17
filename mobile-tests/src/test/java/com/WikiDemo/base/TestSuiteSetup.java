@@ -17,15 +17,11 @@ public class TestSuiteSetup {
 
     @BeforeSuite
     public void startAppiumServer() {
+        String appiumJsPath = System.getenv("APPIUM_MAIN_JS");
         String os = System.getProperty("os.name").toLowerCase();
-        if (os.contains("win")) {
-            // Use environment variable for Appium main.js path for better portability
-            String appiumJsPath = System.getenv("APPIUM_MAIN_JS");
-            if (appiumJsPath == null || appiumJsPath.isEmpty()) {
-                // Fallback to default path if env variable is not set
-                appiumJsPath = "C:\\Users\\danev\\node_modules\\appium\\build\\lib\\main.js";
-                System.out.println("[Suite][WARN] APPIUM_MAIN_JS environment variable not set. Using default: " + appiumJsPath);
-            }
+
+        if (appiumJsPath != null && !appiumJsPath.isEmpty()) {
+            System.out.println("[Suite] Starting Appium server using APPIUM_MAIN_JS: " + appiumJsPath);
             service = new AppiumServiceBuilder()
                 .withAppiumJS(new File(appiumJsPath))
                 .withIPAddress("127.0.0.1")
@@ -33,7 +29,8 @@ public class TestSuiteSetup {
                 .build();
             service.start();
         } else {
-            System.out.println("[Suite] Skipping Appium server startup (handled by workflow or externally).");
+            System.out.println("[Suite][INFO] APPIUM_MAIN_JS environment variable not set. Please start Appium manually.");
+            System.out.println("[Suite][INFO] Example: appium");
         }
 
         System.out.println("[Suite] Clearing Allure results...");

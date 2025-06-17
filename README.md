@@ -109,6 +109,29 @@ To view results:
 
 ---
 
+## ⚙️ Configuration and Parameterization
+
+By default, the mobile tests use a specific Wikipedia APK (`src/test/resources/apks/org.wikipedia_50530.apk`) and a fixed device name (`emulator-5554`).  
+For demonstration purposes, these values are set in [`mobile-tests/config.properties`](mobile-tests/config.properties).
+
+**Production Recommendation:**  
+In a real-world setup, you should inject these parameters (such as APK path and device name) via:
+- **Environment variables** (e.g., `-DdeviceName=... -DapkPath=...`)
+- **Maven profiles** or CI/CD pipeline variables
+- **Config files** (excluded from version control for sensitive or environment-specific data)
+
+This allows you to:
+- Run tests on different devices (emulators or physical)
+- Test different app versions without code changes
+- Integrate seamlessly with CI/CD pipelines
+
+**Example usage:**
+```sh
+mvn test -DdeviceName=emulator-1234 -DapkPath=/path/to/another.apk
+```
+
+---
+
 ## 📚 Technologies Used
 
 | Area           | Tools/Frameworks                     |
@@ -117,6 +140,25 @@ To view results:
 | Mobile Testing | Appium 2.x, Java, TestNG, Maven, Allure, Android Emulator |
 | API Testing    | Rest-Assured, TestNG, Allure <br>_(Optional: Postman, Newman)_ |
 | CI/CD          | GitHub Actions, YAML Pipelines       |
+
+---
+
+## ⚙️ Local Cross-Platform Appium Server
+
+- On **Windows**, the Appium server is started automatically by the test suite (using the `APPIUM_MAIN_JS` environment variable for the path to Appium's main.js).
+- On **Linux/macOS**, you must start the Appium server manually before running tests:
+  ```sh
+  appium
+  ```
+- To make the setup generic, set the `APPIUM_MAIN_JS` environment variable to the path of your Appium installation (e.g., `C:\Users\youruser\node_modules\appium\build\lib\main.js` on Windows, or `/usr/local/lib/node_modules/appium/build/lib/main.js` on macOS/Linux).
+
+**Example:**
+```sh
+# Windows (PowerShell)
+$env:APPIUM_MAIN_JS="C:\Users\youruser\node_modules\appium\build\lib\main.js"
+# macOS/Linux (bash)
+export APPIUM_MAIN_JS="/usr/local/lib/node_modules/appium/build/lib/main.js"
+```
 
 ---
 
