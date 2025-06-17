@@ -18,7 +18,8 @@ public class TestSuiteSetup {
     @BeforeSuite
     public void startAppiumServer() {
         String appiumJsPath = System.getenv("APPIUM_MAIN_JS");
-        String os = System.getProperty("os.name").toLowerCase();
+        String os = System.getProperty("os.name");
+        System.out.println("Running on: " + os);
 
         if (appiumJsPath != null && !appiumJsPath.isEmpty()) {
             System.out.println("[Suite] Starting Appium server using APPIUM_MAIN_JS: " + appiumJsPath);
