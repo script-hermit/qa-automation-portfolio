@@ -50,11 +50,9 @@ jobs:
             sleep 10
             adb wait-for-device
 
-            # Wait extra time for emulator to fully boot and stabilize
             echo "Waiting 120 seconds for device to fully settle..."
             sleep 120
 
-            # OPTIONAL: Try to pre-install the settings APK to avoid race conditions in CI
             SETTINGS_APK="/home/runner/.appium/node_modules/appium-uiautomator2-driver/node_modules/io.appium.settings/apks/settings_apk-debug.apk"
             if [ -f "$SETTINGS_APK" ]; then
               echo "Attempting manual install of Appium settings APK"
@@ -67,10 +65,8 @@ jobs:
             TEST_EXIT_CODE=$?
             echo "Tests completed with exit code $TEST_EXIT_CODE"
 
-            # Generate Allure report (does not fail build if this fails)
             allure generate allure-results --clean -o allure-report || echo "Allure generation failed"
 
-            # Clean up
             echo "Killing emulator and Appium server..."
             adb -s emulator-5554 emu kill || echo "Emulator not running"
             pkill -f appium || echo "Appium not running"
