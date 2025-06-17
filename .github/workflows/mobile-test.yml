@@ -1,10 +1,6 @@
 name: Mobile Tests with Allure
 
 on:
-  # push:
-  #   branches: [ main ]
-  # pull_request:
-  #   branches: [ main ]
   workflow_dispatch:
 
 jobs:
@@ -12,7 +8,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
       - name: Set up Java
         uses: actions/setup-java@v4
@@ -20,15 +17,6 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
           cache: 'maven'
-
-      # Or, for manual cache:
-      # - name: Cache Maven packages
-      #   uses: actions/cache@v4
-      #   with:
-      #     path: ~/.m2/repository
-      #     key: maven-${{ runner.os }}-${{ hashFiles('mobile-tests/pom.xml') }}
-      #     restore-keys: |
-      #       maven-${{ runner.os }}-
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -41,8 +29,8 @@ jobs:
           npm install -g allure-commandline
           appium driver install uiautomator2
 
-      - name: Set ADB install timeout
-        run: echo "APPIUM_SETTINGS_APK_INSTALL_TIMEOUT=180000" >> $GITHUB_ENV
+      - name: Set ADB install timeout for settings apk
+        run: echo "APPIUM_SETTINGS_APK_INSTALL_TIMEOUT=300000" >> $GITHUB_ENV
 
       - name: Run tests on Android emulator
         uses: reactivecircus/android-emulator-runner@v2
@@ -54,22 +42,39 @@ jobs:
           emulator-options: -no-window -noaudio -no-boot-anim
           disable-animations: true
           script: |
+            set -e
             pwd
             ls -l
+
             nohup appium --log appium.log &
             sleep 10
             adb wait-for-device
-            boot_completed=""; timeout=120; elapsed=0; while [ "$boot_completed" != "1" ] && [ $elapsed -lt $timeout ]; do boot_completed=$(adb shell getprop sys.boot_completed 2>/dev/null | tr -d '\r'); if [ "$boot_completed" != "1" ]; then sleep 5; elapsed=$((elapsed+5)); fi; done
-            echo "Emulator boot_completed=$boot_completed after $elapsed seconds"
-            echo "Device boot animation status:"
-            adb shell getprop init.svc.bootanim
-            echo "Device boot completed property:"
-            adb shell getprop sys.boot_completed
-            echo "Waiting extra 60 seconds for device to settle..."
-            sleep 60
-            cd mobile-tests && mvn clean test || echo "Tests failed"
-            echo "Tests completed with exit code $?"
+
+            # Wait extra time for emulator to fully boot and stabilize
+            echo "Waiting 120 seconds for device to fully settle..."
+            sleep 120
+
+            # OPTIONAL: Try to pre-install the settings APK to avoid race conditions in CI
+            SETTINGS_APK="/home/runner/.appium/node_modules/appium-uiautomator2-driver/node_modules/io.appium.settings/apks/settings_apk-debug.apk"
+            if [ -f "$SETTINGS_APK" ]; then
+              echo "Attempting manual install of Appium settings APK"
+              adb install -r "$SETTINGS_APK" || true
+            else
+              echo "Settings APK not found, skipping manual install"
+            fi
+
+            cd mobile-tests && mvn clean test
+            TEST_EXIT_CODE=$?
+            echo "Tests completed with exit code $TEST_EXIT_CODE"
+
+            # Generate Allure report (does not fail build if this fails)
             allure generate allure-results --clean -o allure-report || echo "Allure generation failed"
+
+            # Clean up
+            echo "Killing emulator and Appium server..."
+            adb -s emulator-5554 emu kill || echo "Emulator not running"
+            pkill -f appium || echo "Appium not running"
+            exit $TEST_EXIT_CODE
 
       - name: Upload Allure report
         if: always()
