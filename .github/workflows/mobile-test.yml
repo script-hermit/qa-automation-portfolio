@@ -2,9 +2,6 @@ name: Mobile Tests
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
   mobile-tests:
