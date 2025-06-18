@@ -75,3 +75,10 @@ jobs:
         with:
           name: allure-report
           path: mobile-tests/allure-report
+
+      - name: Upload TestNG HTML Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: testng-html-report
+          path: mobile-tests/target/surefire-reports/*.html
