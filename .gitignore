@@ -1,3 +1,6 @@
 allure-report/
 allure-results/
 target/
+playwright-report/
+test-results/
+surefire-reports/
