@@ -23,12 +23,12 @@ qa-automation-portfolio/
 
 ## 🧪 Features
 
-- **Web Testing**: Automated UI tests for modern web apps (e.g., login flows, form validation) using Playwright.
-- **Mobile Testing**: Android emulator-based tests using Appium 2.x, Java, and TestNG. CI runs on GitHub Actions with a real emulator and Allure HTML reporting.
+- **Web Testing**: Automated UI tests for modern web apps (e.g., login flows, form validation) using Playwright. Tests are organized in `web-tests/tests/smoke/` with page objects in `web-tests/page-objects/`.
+- **Mobile Testing**: Android emulator-based tests using Appium 2.x, Java, and TestNG. CI runs on GitHub Actions with a real emulator and Allure HTML reporting, plus TestNG HTML reports.
 - **API Testing**: REST API tests via Rest-Assured (Java + TestNG) with data-driven assertions and Allure reporting.  
   <sup>_(Optional: You can also add Postman collections and Newman if desired.)_</sup>
 - **CI/CD Integration**: GitHub Actions workflows for all test suites, including mobile tests on an Android emulator.
-- **Artifacts & Reporting**: Screenshots, logs, and HTML test reports (including Allure) exported from CI as downloadable artifacts.
+- **Artifacts & Reporting**: Screenshots, logs, and HTML test reports (including Allure, TestNG HTML, and Playwright HTML) exported from CI as downloadable artifacts.
 
 ---
 
@@ -85,26 +85,36 @@ mvn test
 
 ---
 
-## ⚙️ GitHub Actions
+## ⚙️ GitHub Actions & Reporting
 
 CI is configured to:
 - Install dependencies for each test suite
 - For mobile: set up an Android emulator, install Appium and drivers, and run tests on the emulator
-- Generate and upload Allure HTML reports as workflow artifacts
+- **Cache Maven dependencies** for faster builds
+- Generate and upload Allure HTML reports as workflow artifacts for mobile and API tests
+- Generate and upload TestNG HTML reports for mobile and API tests
+- Generate and upload Playwright HTML reports for web tests
 - Show pass/fail badges for each workflow in this README
 
-To view results:
+**To view results:**
 1. Click on the **Actions** tab above
-2. Open the latest workflow run (e.g., "Mobile Tests with Allure")
-3. Download the `allure-report` artifact for mobile or API test results
+2. Open the latest workflow run (e.g., "Mobile Tests", "Playwright Tests", or "API Tests")
+3. Download the relevant artifact:
+   - `allure-report` (mobile or API)
+   - `testng-html-report` (mobile or API)
+   - `playwright-report` (web)
+
+**Web Test Reports:**  
+After running Playwright tests, view the HTML report locally at `web-tests/playwright-report/index.html` or download the `playwright-report` artifact from CI and open `index.html` in your browser.
 
 ---
 
 ## 📸 Example Artifacts
 
-- ✅ Playwright screenshots and HTML reports
+- ✅ Playwright screenshots and HTML reports (`web-tests/playwright-report/index.html`)
 - ✅ API test logs and response validation (Rest-Assured)
 - ✅ Allure HTML reports for mobile and API tests (downloadable from CI)
+- ✅ TestNG HTML reports for mobile and API tests (downloadable from CI)
 - ⏳ Video recording (optional, coming soon)
 
 ---
@@ -137,9 +147,9 @@ mvn test -DdeviceName=emulator-1234 -DapkPath=/path/to/another.apk
 | Area           | Tools/Frameworks                     |
 |----------------|--------------------------------------|
 | Web Automation | Playwright, Node.js, HTML Reports    |
-| Mobile Testing | Appium 2.x, Java, TestNG, Maven, Allure, Android Emulator |
+| Mobile Testing | Appium 2.x, Java, TestNG, Maven, Allure, TestNG HTML, Android Emulator |
 | API Testing    | Rest-Assured, TestNG, Allure <br>_(Optional: Postman, Newman)_ |
-| CI/CD          | GitHub Actions, YAML Pipelines       |
+| CI/CD          | GitHub Actions, YAML Pipelines, Maven Caching       |
 
 ---
 
