@@ -2,9 +2,6 @@ name: Mobile Tests
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
   mobile-tests:
@@ -50,14 +47,14 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
-      - uses: actions/cache@v3
+      - name: Cache Maven packages
+        uses: actions/cache@v4
         with:
           path: |
-            ~/.gradle/caches
-            ~/.gradle/wrapper
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+            ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
-            ${{ runner.os }}-gradle-
+            ${{ runner.os }}-maven-
 
       - name: Run mobile tests on emulator
         uses: reactivecircus/android-emulator-runner@v2
@@ -75,3 +72,10 @@ jobs:
         with:
           name: allure-report
           path: mobile-tests/allure-report
+
+      - name: Upload TestNG HTML Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: testng-html-report
+          path: mobile-tests/target/surefire-reports/*.html
